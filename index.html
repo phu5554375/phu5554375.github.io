@@ -1,209 +1,555 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zxx">
+
 <head>
-  <meta charset="utf-8" />
-  <title>Lê Ngọc Phú</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <meta name="copyright" content="">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="png/phu.png">
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="assets/libs/ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" href="assets/libs/fancybox/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="assets/libs/slick/slick.css">
-  <!-- Theme Styles -->
-  <link rel="stylesheet" href="assets/css/main.css">
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-  <![endif]-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Phiêu vũ môn</title>
+	<link rel="stylesheet" href="css/main.css" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,700;1,800&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-	<!-- header -->
-  <header>
-    <nav>
-      <div class="logo">
-        <img src="jpg/ava.jpg" />
-      </div>
-      <div class="header-content">
-        <ul>
-          <li><a href="#about-me" class="active">About Me</a></li>
-          <li><a href="#skills-me">Skills</a></li>
-          <li><a href="#project-interest">Project & INTERESTS
-            </a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-<!-- wrapper -->
-  <section class="wrapper">
-    <div class="section" id="about-me">
-      <div class="about-content">
-        <h1> Lê Ngọc <span class="text-primary">Phú</span> </h1>
-        <p class="about-content-p-from"> MỸ ĐÌNH - Hà Nội - Việt Nam - <a
-            href="mailto:phu5554375@gmail.com">phu5554375@gmail.com</a></p>
-       
-        <em class="sub-about">
-          <p class="about-content-p">“Hello, I'm Front-end Develope”</p>
-        </em>
-        
-      </div>
-      <div class="social-contact">
-       <p></p>
-      </div>
-    </div>
-    <div class="section" id="skills-me">
-      <h2>SKILLS</h2>
-      <div class="sub-icon">PROGRAMMING LANGUAGES & TOOLS</div>
-      <div class="skill-icon">
-        <ul>
-          <div class="icon-content-skill">
-            <li>
-              <i class="devicon-html5-plain-wordmark colored"></i>
-            </li>
-            <li>
-              <i class="devicon-css3-plain-wordmark colored"></i>
-            </li>
-            <li>
-              <i class="devicon-javascript-plain colored"></i>
-            </li>
-            <li>
-              <i class="devicon-sass-original colored"></i>
-            </li>
-            <li>
-              <i class="devicon-jquery-plain-wordmark colored"></i>
-            </li>
-            <li>
-              <i class="devicon-bootstrap-plain colored"></i>
-            </li>
-          </div>
-          <div class="icon-content-skill">
-            <li>
-              <i class="devicon-git-plain colored"></i>
-            </li>
-            <li>
-              <i class="devicon-github-plain colored"></i>
-            </li>
-            <li>
-              <i class="devicon-mongodb-plain-wordmark colored"></i>
-            </li>
-            <li>
-              <i class="devicon-nodejs-plain colored"></i>
-            </li>
-            <li>
-              <i class="devicon-express-original"></i>
-            </li>
-            <li>
-              <i class="devicon-heroku-plain colored"></i>
-            </li>
-          </div>
-        </ul>
-      </div>
-      <div class="content-skills">
-        <h3>HTML5/ CSS3</h3>
-        <ul>
-          <p>
-            Kinh nghiệm: 2 năm
-          </p>
-          
-          <li>Nhận file PSD và dựng giao diện chính cho website công ty</li>
-          <li>Triển khai các công việc liên quan như site vệ tinh, landdingpage, email markerting</li>
-        </ul>
-      </div>
-      <div class="content-skills">
-        <h3>Reactjs</h3>
-        <ul>
-          <p>
-            Kinh nghiệm: 8tháng
-          </p>
-          <li>Dựng các trang landding page bằng jsx </li>
-          <li>Tham gia dự án CRM sử dụng mô hình react hook</li>
-          <li>Giao tiếp back-end bằng API </li>
-          
-        </ul>
-      </div>
-    </div>
-    <div class="section" id="project-interest">
-      <h2>PROJECT & INTERESTS</h2>
-      <div class="project">
-        <h3>Printgo - Nền tảng in ấn số 1 Việt Nam</h3>
-        <p>Vị trí: Front-end developer
-          </p>
-        <div class="content-project">
-          <ul>
-            <li>
-              Thực hiện dựng giao diện cho website<a target="blank" href="printgo.vn">printgo.vn </a>
-            </li>
-            <li>Dựng landding page cho các event, sử dụng reactjs
-            </li>
-            <li>
-              Tạo các site vệ tinh bằng wordpress, 
-            </li>
-            
-          </ul>
-        </div>
-      </div>
-      <div class="interest">
-        <h3>CÔNG TY CÔNG NGHỆ ISHOPGO</h3>
-        <div class="content-interest">
-          <p>Vị trí: Front-end developer
-          </p>
-          <div class="content-project">
-          <ul>
-            <li>Dựng UI cho các website khách hàng
-            </li>
-            <li>Ghép giao diện web vào hệ thống bằng laravel cơ bản
-            </li>
-           
-            
-          </ul>
-        </div>
-        </div>
-      </div>
-      <div class="interest">
-        <h3>CÔNG TY CỔ PHẦN TECHCUBE</h3>
-        <div class="content-interest">
-          <p>Vị trí: Front-end developer
-          </p>
-          <div class="content-project">
-          <ul>
-            <li>Cắt giao diện website
-            </li>
-            <li>Ráp giao điện vào wordpress
-            </li>
-           
-            
-          </ul>
-        </div>
-        </div>
-      </div>
-    </div>
-    <!-- footer -->
-    <footer>
-      <div class="copyright">
-        <p class="copyright-p">© 2016-2019 - Bản quyền thuộc về Phu Le</p>
-      </div>
-    </footer>
-  </section>
-  <div class="clear"></div>
-  <!-- JS -->
-  <script src="assets/libs/jquery.min.js"></script>
-  <script src="assets/libs/bootstrap/js/bootstrap.js"></script>
 
-  <script src="assets/libs/porto/plugins.min.js"></script>
-  <script src="assets/libs/porto/main.min.js"></script>
+	<nav class="navbar navbar-fixed-top navbar-light">
+		<div class="container">
+			<a href="#" class="ui-variable-logo navbar-brand" title="iShopGo">
+				<img class="logo-default" src="img/logo2.png" alt="iShopGo">
+			</a>
+			<div class="ui-navigation navbar-right">
+				<ul class="nav navbar-nav">
+					<li><a href="#profile">Profile.</a></li>
+					<li><a href="#about" data-scrollto="how-it-works">About.</a></li>
+					<li><a href="#service" data-scrollto="how-it-works">Service.</a></li>
+					<li><a href="#contact" data-scrollto="how-it-works">Contact.</a></li>
+				</ul>
+			</div>
+			<a href="#" class="column pull-right" onclick="openTab('b1');">
+				<img src="img/icon-top.png"/>
+			</a>
+			<a href="#" class="ui-mobile-nav-toggle pull-right"></a>
+			<div id="b1" class="containerTab">
+				<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+				<div class="logo-pop">
+					<img src="img/logo-pop.png"/>
+				</div>
+				<p>Vũ Đức Thành Long cùng Phiêu Vũ Môn mong muốn lan tỏa những triết lý giao dịch đã tạo nên 
+					thành công cho những nhà đầu tư nổi tiếng trên thế giới ra toàn cộng đồng ở VN.</p>
+					
+					<p>Những 
+					triết lý đó bạn có thể dễ dàng tìm thấy trên mạng internet hoặc sách báo. Tuy nhiên, 
+					phần lớn những triết lý về đầu tư đó đều rất mơ hồ và nhiều lý thuyết dẫn đến việc khó 
+					áp dụng trong giao dịch thực tế.
+				</p>
+				<h4>Thông tin liên hệ</h4>
+				<p>Thanh Xuân, Hà Nội</p>
+				<p>Số điện thoại: 037 6043585</p>
+				<p>phieuvumon@gmail.com</p>
+				<div class="col-12 text-left icon-pop">
+					<a href="#" class="btn-circle shadow-md"><img src="img/icons/facebook.png"/></a>
+					<a href="#" class="btn-circle shadow-md"><img src="img/icons/Group.png"/></a>
+					<a href="#" class="btn-circle shadow-md"><img src="img/icons/twitter.png"/></a>
+					
+				</div>
+			  </div>
+		</div>
+	</nav>
 
-  <script src="assets/libs/fancybox/jquery.fancybox.min.js"></script>
-  <script src="assets/libs/slick/slick.js"></script>
-  
-  <!-- Theme Script -->
-  <script src="assets/js/main.js"></script>
-  <script>
-    $(document).ready(function(){});
-  </script>
+	<!-- Main Wrapper -->
+	<div class="main main--ishopgo" role="main">
+
+		<!-- Waves Hero -->
+		<div class="ui-hero ui-waves ui-gradient-green">
+			<div id="owl-silder" class="owl-carousel owl-theme">
+
+				<div class="item"><img src="img/slide1.png" alt="The Last of us"></div>
+				<div class="item"><img src="img/sli222.png" alt="The Last of us"></div>
+				<div class="item"><img src="img/sli33.png" alt="The Last of us"></div>
+
+			</div>
+		</div>
+
+		<!-- App Features Section -->
+		<div class="section--fets">
+			<div class="container ui-icon-blocks ui-blocks-h icons-lg">
+
+				<div class="row justify-content-center">
+					<div class="col-12 col-md-4 affter-right-border">
+						<div class="ui-icon-block">
+
+							<h4 class="ui-icon-block__title1"><span class="for-bt">4</span> hành trang làm nên nhà giao dịch thành công</h4>
+
+						</div>
+					</div>
+					<div class="col-12 col-md-4 affter-right-border2">
+						<div class="ui-icon-block">
+							<p class="ui-icon-block__num">01.</p>
+							<h4 class="ui-icon-block__title">Tư duy giao dịch</h4>
+							<p class="ui-icon-block__sub">Hãy nhớ rằng Indi cator chỉ là công cụ, tư duy giao dịch của
+								chúng ta
+								mới quyết định cách chúng ta sử dụng indicator như thế nào ? Nắm chắc kỷ luật cảm xúc kỷ
+								luật
+								tiền bạc giúp bạn định hình lại tư duy giao dịch của một trader bản lĩnh trong thị
+								trường.</p>
+						</div>
+					</div>
+					<div class="col-12 col-md-4">
+						<div class="ui-icon-block border-mb">
+							<p class="ui-icon-block__num">02.</p>
+							<h4 class="ui-icon-block__title">Tâm lý giao dịch</h4>
+							<p class="ui-icon-block__sub"> Yếu tố tâm lý là một nguyên nhân quan trọng trong sự thành
+								công hay
+								thất bại của trader. Phiêu Vũ Môn sẽ cùng bạn xây dựng kĩ năng làm chủ cảm xúc, xác định
+								được
+								tâm lý giao dịch của một trader thực thụ với một con bạc khát máu.</p>
+						</div>
+					</div>
+
+
+					<div class="w-100 d-none d-md-block"></div>
+					<div class="col-12 col-md-4 affter-right-border2" >
+
+					</div>
+					<div class="col-12 col-md-4 affter-right-border">
+						<div class="ui-icon-block">
+							<p class="ui-icon-block__num">03.</p>
+							<h4 class="ui-icon-block__title">Chiến lược giao dịch</h4>
+							<p class="ui-icon-block__sub">Yếu tố được xem là quan trọng nhất trong hệ thống giao dịch
+								của bất kì
+								trader nổi tiếng nào trên thế giới. Bạn muốn thành công trong phương pháp đầu tư giá
+								trị, bạn
+								cần có kế hoạch, cần phải phân tích kỹ càng, cần phải đo lường được rủi ro và đặc biệt
+								là luôn
+								phải kiên định với chiến thuật và mục tiêu ban đầu.</p>
+						</div>
+					</div>
+					<div class="col-12 col-md-4 border-mb2">
+						<div class="ui-icon-block">
+							<p class="ui-icon-block__num">04.</p>
+							<h4 class="ui-icon-block__title">Tín hiệu giao dịch</h4>
+							<p class="ui-icon-block__sub">Đối với 1 trader tín hiệu chỉ là thứ yếu phải có trong hành
+								trang giao
+								dịch nhưng lại là điều kiện tiên quyết giúp tạo nên thành quả.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- App Specs Section -->
+		<div class="section section--specs" id="about">
+			<div class="container">
+				<div class="section-heading center">
+					<h2 class="heading center">about-us</h2>
+				</div>
+				<div class="row">
+					<div class="col-lg-8 col-xl-8 display-start">
+
+						<div class="tabs-left">
+
+							<ul id="nav-tabs-wrapper" class="nav nav-tabs nav-pills nav-stacked well">
+								<li class="active"><a data-target="#vtab1" data-toggle="tab">giá trị cốt lõi</adata-target="#tab1default"></li>
+								<li><a data-target="#vtab2" href="#" data-toggle="tab">Tầm nhìn</a data-target="#vtab1"></li>
+								<li><a data-target="#vtab3" href="#" data-toggle="tab">sứ mệnh</a data-target="#vtab1"></li>
+							</ul>
+						</div>
+
+						<div class="tab-content hover-tabs">
+							<div role="tabpanel" class="tab-pane in active" id="vtab1">
+								Tư duy và tâm lý giao dịch – là những điều mà thị trường luôn dạy bạn nhưng không bao
+								giờ
+								là đúng. Cũng như kiến thức về phân tích kỹ thuật được đăng tải trên internet rất đầy đủ
+								và đa dạng nhưng thực tế là rất khó để vận dụng để giúp chúng ta có thể giao dịch sinh
+								lời được. Trong khi đó điều nhiều nhà giao dịch tin tưởng là tín hiệu giao dịch thì chỉ
+								chiếm khoảng 20-30% của một lệnh giao dịch có lời, quan trọng là mỗi Trader phải xây
+								dựng
+								được chiến lược trước khi mọi tình huống của thị trường, bởi vì bản chất vốn dĩ chúng ta
+								không thể dự đoán thị trường lên hay xuống một cách chính xác bất cứ khi nào cả.
+							</div>
+							<div role="tabpanel" class="tab-pane fade" id="vtab2">
+								Tư duy và tâm lý giao dịch – là những điều mà thị trường luôn dạy bạn nhưng không bao
+								giờ
+								là đúng. Cũng như kiến thức về phân tích kỹ thuật được đăng tải trên internet rất đầy đủ
+								và đa dạng nhưng thực tế là rất khó để vận dụng để giúp chúng ta có thể giao dịch sinh
+								lời được. Trong khi đó điều nhiều nhà giao dịch tin tưởng là tín hiệu giao dịch thì chỉ
+								chiếm khoảng 20-30% của một lệnh giao dịch có lời, quan trọng là mỗi Trader phải xây
+								dựng
+								được chiến lược trước khi mọi tình huống của thị trường, bởi vì bản chất vốn dĩ chúng ta
+								không thể dự đoán thị trường lên hay xuống một cách chính xác bất cứ khi nào cả.
+							</div>
+							<div role="tabpanel" class="tab-pane fade in" id="vtab3">
+								Tư duy và tâm lý giao dịch – là những điều mà thị trường luôn dạy bạn nhưng không bao
+								giờ
+								là đúng. Cũng như kiến thức về phân tích kỹ thuật được đăng tải trên internet rất đầy đủ
+								và đa dạng nhưng thực tế là rất khó để vận dụng để giúp chúng ta có thể giao dịch sinh
+								lời được. Trong khi đó điều nhiều nhà giao dịch tin tưởng là tín hiệu giao dịch thì chỉ
+								chiếm khoảng 20-30% của một lệnh giao dịch có lời, quan trọng là mỗi Trader phải xây
+								dựng
+								được chiến lược trước khi mọi tình huống của thị trường, bởi vì bản chất vốn dĩ chúng ta
+								không thể dự đoán thị trường lên hay xuống một cách chính xác bất cứ khi nào cả.
+							</div>
+						</div>
+						<div class="col-xs-12 mobile-team">
+							<img src="img/tem-mo.png"/>
+						</div>
+
+					</div>
+					<div class="col-lg-7 col-xl-7 d-none">
+						<!-- Logo Cloud -->
+						<div class="ui-banner-cloud">
+							<img src="img/team11.png" />
+						</div>
+
+					</div>
+				</div><!-- .row -->
+			</div>
+		</div>
+		<!-- App Specs Section -->
+		<div class="section section--talk" id="profile">
+			<div class="container">
+				<div class="row row align-items-center">
+					<div class="mobile-team text-center">
+						<h4 class="title-tak3">Những lần vấp ng<sub class="lec-tak3">ã</sub> trên hành trình theo
+							đuổi đam mê</h4>
+					</div>
+					<div class="col-lg-6 col-xl-6 wid-40 posi-img">
+						<div class="ui-banner-cloud ">
+							<img src="img/mak1.png" />
+						</div>
+
+					</div>
+					<div class="col-lg-6 col-xl-6 ">
+						<div class="pd-66 ">
+							<h4 class="title-tak3 none-mb">Những lần vấp ng<sub class="lec-tak3">ã</sub> trên hành trình theo
+								đuổi đam mê</h4>
+							<p class="cmt-tak3 padding-mobile">Bằng sự nhạy bén với những con số, Vũ Đức Thành Long- Sinh
+								năm 1994 đã tìm hiểu và nghiên cứu thị trường đầu tư. Đến
+								năm 2017 Vũ Đức Thành Long đã có những thành công đáng
+								kể trong thị trường đầu tư.</p>
+							<p class="cmt-tak3">Đứng lên sau 2 lần mất trắng với thị trường, Vũ Đức Thành
+								Long xây dựng Phiêu Vũ Môn với mong muốn lan tỏa những
+								triết lý giao dịch đã tạo nên thành công cho những nhà
+								đầu tư nổi tiếng trên thế giới tới toàn cộng đồng ở VN.</p>
+						</div>
+					</div>
+					<div class="col-xs-12 mobile-team text-center">
+						<h4 class="title-tak3">hành trình truyền cảm hứng bằng kiến thức</h4>
+					</div>
+					<div class="col-lg-6 col-xl-6 mobile-ct">
+						
+						<div class="pd-66">
+							<h4 class="title-tak3 none-mb">hành trình truyền cảm hứng bằng kiến thức</h4>
+							<p class="cmt-tak3">Kiên trì theo đuổi đam mê và đã có được những thành công nhưng Vũ Đức
+								Thành Long vẫn chưa dừng lại và luôn theo đuổi mục tiêu hoàn thiện chính mình và xây
+								dựng con đường giao dịch thành công, và phát triển đến tầm cỡ châu lục và thế giới</p>
+
+						</div>
+					</div>
+					<div class="col-lg-6 col-xl-6 wid-40 ">
+						<div class="ui-banner-cloud">
+							<img src="img/mak2.png" />
+						</div>
+
+					</div>
+					<div class="col-md-12 col-xs-12 text-center temino">
+						<img src="img/icon-4.png" />
+						<div class="text-ce5">
+							“ Tôi giàu có vì tôi biết khi nào mình sai… Tôi tồn tại được nhờ nhận ra các sai lầm của
+							mình. ”
+						</div>
+					</div>
+				</div><!-- .row -->
+			</div>
+		</div>
+		<div class="section section-tabs-tow" id="service">
+			<div class="container">
+				<div class="section-heading center">
+					<h2 class="heading center">service</h2>
+				</div>
+				<div class="row">
+					<div class="col-6 col-md-4 before-tab-tow">
+						<div class="uti_body">
+							<span class="icon">
+								<img alt="" src="img/icons/Frame.png" />
+							</span>
+							<div class="content">
+								<span class="title">Đào tạo</span>
+								<span class="sum">Phiêu Vũ Môn cung cấp những khoá học về giao dịch và tư đầu tư. Ngoài
+									những khoá học, học viện cũng có những chương trình coaching đặc biệt dành riêng cho
+									từng người học.</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-6 col-md-4    ">
+						<div class="uti_body">
+							<span class="icon">
+								<img alt="" src="img/icons/work 1.png" />
+							</span>
+							<div class="content">
+								<span class="title">Trade Coaching</span>
+								<span class="sum">Chương trình huấn luyện đặc biệt dành cho những nhà đầu tư mong muốn
+									tìm hiểu về các phương pháp giao dịch trong thị trường crypto.</span>
+							</div>
+						</div>
+					</div>
+					<div class=" col-6 col-md-4   before-tab-three">
+						<div class="uti_body">
+							<span class="icon">
+								<img alt="" src="img/icons/ten-lua.png" />
+							</span>
+							<div class="content">
+								<span class="title">Crypto Media</span>
+								<span class="sum">Là kênh truyền thông kết nối cộng đồng quan tâm về công nghệ
+									blockchain với các dịch vụ, sản phẩm của các đơn vị hàng đầu trong lĩnh vực
+									blockchain.</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="album-da">
+			<div class="img-album">
+				<div class="flex-img">
+					<div class="img-gr">
+						<img src="img/Mask Group.png" />
+					</div>
+				</div>
+				<div class="flex-img">
+					<div class="img-gr">
+						<img src="img/Mask Group-1.png" />
+					</div>
+				</div>
+				<div class="flex-img">
+					<div class="img-gr">
+						<img src="img/Mask Group-2.png" />
+					</div>
+				</div>
+				<div class="flex-img">
+					<div class="img-gr">
+						<img src="img/Mask Group-3.png" />
+					</div>
+				</div>
+			</div>
+			<div class="img-album">
+				<div class="flex-img">
+					<div class="img-gr">
+						<img src="img/Mask Group-4.png" />
+					</div>
+				</div>
+				<div class="flex-img">
+					<div class="img-gr">
+						<img src="img/Mask Group-5.png" />
+					</div>
+				</div>
+				<div class="flex-img">
+					<div class="img-gr">
+						<img src="img/Mask Group-6.png" />
+					</div>
+				</div>
+				<div class="flex-img">
+					<div class="img-gr">
+						<img src="img/Mask Group-7.png" />
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+		<!-- App Screens Section -->
+		<div class=" section--screens">
+			<div class="container">
+				<div id="owl-logo" class="owl-carousel owl-theme">
+
+					<div class="item logo-item"><img src="img/icons/image 21.png" alt="" /></div>
+					<div class="item logo-item"><img src="img/icons/image 22.png" alt="" /></div>
+					<div class="item logo-item"><img src="img/icons/image 23.png" alt="" /></div>
+					<div class="item logo-item"><img src="img/icons/image 24.png" alt="" /></div>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="section feddback">
+			<div class="container">
+				<div class="row">
+					<div id="owl-feedback" class="owl-carousel owl-theme">
+						<div class="item">
+							<div class="single-customer-feedback text-center">
+								<div class="scf_customer-info">
+									<div class="scf_customer-title"><b>Hưng Đào</b> / 24 tuổi / Đà Nẵng</div>
+									
+								</div>
+								<div class="scf_main-content">
+									<span>" Cảm ơn anh Long đã giúp em thay đổi hoàn toàn tư duy trong giao dịch. Nhờ những phương pháp và chiến lược học được trong khóa học đã giúp cho em loại bỏ được tâm lý phán đoán và bị dẫn dắt bởi số đông trên thị trường, tự tin với mỗi lệnh mình vào và tạo ra được những khoản đầu tư hiệu quả hơn. Sẽ luôn ủng hộ và tham gia các khóa học cập nhật kiến thức mới về tư duy đầu tư của anh."</span>
+								</div>
+								<div class="scf_customer-content">
+									<div class="scf_customer-avatar"><img src="img/avt.png" alt=""></div>
+									
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="single-customer-feedback text-center">
+								<div class="scf_customer-info">
+									<div class="scf_customer-title"><b>Đào Văn Bắc</b> / 30 tuổi / TP Hồ Chí Minh</div>
+									
+								</div>
+								<div class="scf_main-content">
+									<span>" Khoá học chứa đựng nhiều kiến thức nhưng đơn giản dể hiểu và dễ áp dụng. khoá học giúp mọi người lên kế hoạch giao dịch cụ thể cho sự biến động của thị trường."</span>
+								</div>
+								<div class="scf_customer-content">
+									<div class="scf_customer-avatar"><img src="img/avt2.png" alt=""></div>									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--  Testimonial Section -->
+		<div class="section section--form" id="contact">
+			<div class="container">
+				<div class="section-heading">
+					<h2 class="heading center">contact</h2>
+					<p class="paragraph top-20">Nhận những chia sẻ độc đáo về tư duy đầu tư từ <span class="name-bt">VŨ ĐỨC THÀNH LONG</span></p>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-xs-12 tt-bt">
+						<ul>
+							<li><a href=""><span><img src="img/icons/phone.png"/></span> 037 6043585</a></li>
+							<li><a href=""><span><img src="img/icons/maps.png"/></span> Thanh Xuân, Hà Nội, Việt Nam</a></li>
+						</ul>
+					</div>
+					<div class="col-md-6 col-xs-12 contact-fo">
+						<form autocomplete="on" id="contact-form" name="contact-form">
+							
+							<div class="form-group">
+								<div class="row">
+									<div class="col-sm-6">
+										<input class="input form-control" placeholder="Tên của bạn*">
+									</div>
+									<div class="col-sm-6">
+										<!-- Phone Input -->
+										<input class="input form-control" placeholder="Số điện thoại*">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-sm-6">
+										<input class="input form-control" placeholder="Email*">
+									</div>
+									<div class="col-sm-6">
+										<button type="submit" class="btn btn-block">Gửi cho tôi</button>
+									</div>
+								</div>
+							</div>
+							
+						</form>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="maps">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29799.52199649272!2d105.79962676045997!3d20.99503210504945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac927ce95957%3A0xe230355f8983adb9!2zVGhhbmggWHXDom4sIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1594461880719!5m2!1svi!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>		
+		</div>
+		<a id="gotop"><img src="img/icons/gotop.png"/></a>
+		<!-- Footer -->
+		<footer class="ui-footer subscribe-footer ui-waves">
+			<!-- Footer Copyright -->
+			<div class="footer-copyright bg-dark-gray">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-4 text-left">
+							<div class="logo-ft"><img src="img/logo2.png"/></div>
+							
+						</div>
+						<!-- Copyright -->
+						<div class="col-8">
+							<p style="color:#fff">© 2020 Phieu Vu Mon by Vu Hoang Long</p>
+						</div>
+						<!-- Social Icons -->
+						
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.sliderpro.min.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/applify.js"></script>
+
+	<script type="text/javascript" src="js/main.js"></script>
+
+
+	<script>
+		var btn = $('#gotop');
+
+			$(window).scroll(function() {
+			if ($(window).scrollTop() > 300) {
+				btn.addClass('show');
+			} else {
+				btn.removeClass('show');
+			}
+			});
+
+			btn.on('click', function(e) {
+			e.preventDefault();
+			$('html, body').animate({scrollTop:0}, '300');
+			});
+
+
+		</script>
+		<script>
+			function openTab(tabName) {
+			  var i, x;
+			  x = document.getElementsByClassName("containerTab");
+			  for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			  }
+			  document.getElementById(tabName).style.display = "block";
+			}
+			</script>
+			<script>
+     
+				$(document).ready(function(){
+					 
+					 $(window).scroll(function(){
+		   
+					   if($(window).scrollTop()>300){
+						 $('nav').addClass('black');
+					   }else{
+						 $('nav').removeClass('black');
+					   }
+		   
+					 });
+		   
+				});
+				$('a[href^="#"]').on('click', function(event) {
+
+				var target = $(this.getAttribute('href'));
+
+				if( target.length ) {
+					event.preventDefault();
+					$('html, body').stop().animate({
+						scrollTop: target.offset().top
+					}, 1000);
+				}
+
+				});
+			 </script>
+
 </body>
+
 </html>
