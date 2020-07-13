@@ -245,6 +245,9 @@
   color:#fff;
   text-transform: uppercase;
 }
+.section--specs .tabs-left ul.nav-tabs li{
+  width:100%
+}
 .section--specs .tabs-left ul.nav-tabs{
   line-height: 65px;
 }
@@ -252,7 +255,7 @@
   font-weight: bold;
 }
 .section--specs .tab-content{
-  width: 55%;
+    width: 100%;
     background: #BDB237;
     padding: 40px;
     color: #fff;
