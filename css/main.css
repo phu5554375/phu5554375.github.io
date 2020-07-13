@@ -8,7 +8,7 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
- 
+
   .cmt-tak3{
     padding-left: 106px;
   }
@@ -21,7 +21,7 @@
   .pd-66 {
     padding-left: 135px !important;
   }
- 
+
 }
 @media screen and (max-width: 768px) {
   .section--specs .container{
@@ -76,9 +76,9 @@
   }
   .ui-icon-blocks .ui-icon-block{
     padding: 7px 25px 0 !important;
-    } 
+    }
     .affter-right-border:after {
-      
+
       top: 0 !important;
       left: 0 !important;
       margin: 0  !important;
@@ -88,7 +88,7 @@
       z-index: -1 !important;
   }
   .affter-right-border2:after {
-  
+
     top: 13px !important;
     left: 5px !important;
     margin-left: -62px !important;
@@ -109,6 +109,10 @@
 .section--specs .tabs-left ul.nav-tabs{
   display: flex;
   justify-content: space-evenly;
+
+}
+.section--specs .tabs-left ul.nav-tabs li{
+  width: 100%;
 }
 .tabs-left{
   margin-top: -20px;
@@ -122,13 +126,13 @@
   padding: 16px 5px 10px 5px !important;
 }
 .text-ce5{
-  padding: 22px 0 !important; 
+  padding: 22px 0 !important;
 }
 .uti_body{
   padding-bottom: 20px;
   width: 90% !important;
   margin: 0 auto;
- 
+
 }
 .before-tab-tow::before{
   left: 5% !important;
@@ -212,7 +216,7 @@
     .nav-tabs-horizontal > li > a {
         background: transparent;
         width: 100%;
-    } 
+    }
     .nav-tabs-horizontal  > li > a {
         border-radius: 4px;
     }
@@ -257,19 +261,18 @@
     text-align: justify;
     line-height: 21px;
 }
-.section--specs .tab-content:hover::after{
+/* .section--specs .tab-content::after{
   content: "";
     display: block;
     position: absolute;
     top: 10px;
     color: #fff;
     left: 26%;
-    /* margin-left: -75px; */
     width: 53%;
     height: 99%;
     border: 7px double #fff;
     z-index: -1;
-}
+} */
 .main--ishopgo .section-heading .heading.center:before {
   content: "";
   display: block;
@@ -293,7 +296,7 @@
 }
 .ui-banner-cloud img {
   width: 100%;
- 
+
 }
 .title-tak3{
   text-transform: uppercase;
@@ -393,14 +396,14 @@
 .uti_body .content .sum {
   font-weight: 400;
   color: #fff;
-  
+
 }
 .img-album{
   display: flex;
 }
 .img-album .flex-img{
   width: 25%;
-  
+
 }
 .img-gr{
   width: 100%;
@@ -449,7 +452,7 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  transition: background-color .3s, 
+  transition: background-color .3s,
     opacity .5s, visibility .5s;
   opacity: 0;
   visibility: hidden;
@@ -464,7 +467,7 @@
 }
 
 @media (min-width: 500px) {
- 
+
   #gotop {
     margin: 30px;
   }
@@ -546,7 +549,7 @@
 .containerTab h4{
   color: #fff;
   font-size: 15px;
-  
+
 }
 .icon-pop{
   padding: 30px 0;
@@ -647,72 +650,7 @@
   margin-bottom: 67px;
 }
 
-/*!
- * Applify v2.0 (http://codeytech.com/site-templates/applify/)
- * Author: Codeytech (http://codeytech.com/)
- */
-/*!
- * CSS Table of contents
- *
- * --- Libraries
- * 01. Bootstrap 4.0.0
- * 03. Simple Line Icons
- * 04. Owl Carousel
- * 06. Prism
- *
- * --- Utilities
- * 08. Colors
- * 09. Media
- * 10. Shadows
- * 11. Spacing
- * 12. Typography
- *
- * --- Core Styling
- * 13. Base
- *
- * --- UI Components
- * 14. Accordion
- * 15. Buttons
- * 16. Cards
- * 17. Collapsible Nav
- * 18. Drop-downs
- * 19. Footer
- * 20. Hero
- * 21. Icon Blocks
- * 22. Logos Cloud
- * 23. Modal
- * 24. Nav Bar
- * 25. Section
- * 26. Tabs
- * 28. Showcase Blocks
 
- *
- * --- Modules
- * 30. Accordion Showcase
- * 31. App Screens
- * 32. App Showcase
- * 33. App Stats
-
- 
- 
- * 37. Pricing Cards
- * 38. Tabbed Showcase
-
-
-
- * 42. Api Docs
- * 43. Contact Page
- * 44. 404 Page
- */
-/**
-* 01. Bootstrap 4.0.0
-* ----------------------------------------------------------------------- *
-*
-* Bootstrap Grid v4.0.0-beta.2 (https://getbootstrap.com)
-* Copyright 2011-2017 The Bootstrap Authors
-* Copyright 2011-2017 Twitter, Inc.
-* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-*/
 @import url('https://fonts.googleapis.com/css2?family=Muli:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,700;1,800&display=swap');@-ms-viewport {
   width: device-width; }
@@ -6865,7 +6803,7 @@ a.text-dark:focus, a.text-dark:hover {
   content: ''; }
 
 .owl-theme .owl-nav .owl-next {
-  right: -2rem; 
+  right: -2rem;
   background: url('../img/icons/next.png');
 }
 
@@ -6883,7 +6821,7 @@ a.text-dark:focus, a.text-dark:hover {
   }
 
   .owl-theme .owl-nav .owl-next {
-    right: -3rem;  
+    right: -3rem;
     width: 50px;
     height: 50px;} }
 .owl-theme .owl-nav.disabled + .owl-dots {
@@ -7465,31 +7403,12 @@ body[data-fade_in="on-load"],
   color: #8089ff; }
 
 /**
-* 18. Drop-downs
-* ----------------------------------------------------------------------- *
-*/
-.dropdown .dropdown-header {
-  font-weight: 600;
-  text-transform: uppercase; }
-
-.dropdown .dropdown-menu li a {
-  font-weight: 600; }
-
-@media (min-width: 992px) {
-  .ui-navigation .dropdown .dropdown-menu {
-    position: absolute; }
-
-  .ui-navigation .dropdown .dropdown-menu .dropdown-item.active a {
-    color: #fff; } }
-
-
-/**
 * 20. Hero
 * ----------------------------------------------------------------------- *
 */
 .ui-hero {
-  position: relative; 
- 
+  position: relative;
+
 }
 #owl-silder .owl-stage-outer {
   height: auto;
@@ -7505,11 +7424,6 @@ body[data-fade_in="on-load"],
 */
 .ui-icon-blocks {
   list-style: none; }
-
-
-
-
-
 @media (min-width: 740px) {
   .ui-icon-blocks .ui-icon-block.mb-0-md-up {
     margin-bottom: 0; } }
@@ -7613,52 +7527,6 @@ body[data-fade_in="on-load"],
   font-size: 1.25rem; }
 
 
-
-
-/**
-* 23. Modal
-* ----------------------------------------------------------------------- *
-*/
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  padding: 1rem;
-  background-color: rgba(36, 42, 50, 0.75); }
-
-@media (min-width: 740px) {
-  .modal {
-    padding: 0; } }
-.modal .dialog {
-  position: relative;
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: 0.5rem;
-  box-shadow: 0 7px 15px rgba(0, 9, 128, 0.05), 0 12px 28px rgba(0, 9, 128, 0.075); }
-
-@media (min-width: 740px) {
-  .modal .dialog {
-    margin-top: 6rem; } }
-.modal .close {
-  cursor: pointer;
-  position: absolute;
-  top: .5rem;
-  right: 1rem;
-  z-index: 9;
-  opacity: 0.75;
-  font-size: 1.4rem; }
-
-.modal .close:hover {
-  opacity: 1;
-  transition: opacity 0.25s; }
-
-body.modal-open {
-  overflow: hidden; }
-
 /**
 * 24. Navigation Bar
 * ----------------------------------------------------------------------- *
@@ -7668,7 +7536,7 @@ body.modal-open {
   position: fixed;
   width: 100%;
   align-items: inherit;
- 
+
   z-index: 9; }
 
 @media (max-width: 481px) {
@@ -7720,7 +7588,7 @@ body.modal-open {
 @media (min-width: 992px) {
   .navbar .nav > li > a {
     padding-left: 16px;
-    padding-right: 16px; 
+    padding-right: 16px;
     margin-right: 27px;
   } }
 .navbar .nav > li > a:hover, .navbar .nav > li > a:active {
@@ -7846,7 +7714,7 @@ body.modal-open {
   .navbar .ui-navigation .nav.navbar-nav li {
     flex: 1;
     width: 100%;
-    opacity: 0; 
+    opacity: 0;
   padding: 22px;}
 
   .navbar .ui-navigation .nav.navbar-nav a {
@@ -8077,98 +7945,21 @@ body.modal-open {
 @media (min-width: 768px) {
   .ui-action-section.action-section-simple .actions {
     margin-top: 0; } }
-
-
-/**
-* 44. 404 Page
-* ----------------------------------------------------------------------- *
-*/
-.error404-page .main {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  padding: 4rem 0; }
-
-.error404-page .main .error404-wrapper {
-  max-width: 600px;
-  width: 100%;
-  padding: 4rem 1rem 0 1rem; }
-
-@media (min-width: 740px) {
-  .error404-page .main .error404-wrapper {
-    max-width: 800px; } }
-@media (min-width: 992px) {
-  .error404-page .main .error404-wrapper {
-    max-width: 900px; } }
-@media (min-width: 1367px) {
-  .error404-page .main .error404-wrapper {
-    max-width: 1000px; } }
-.error404-page .main .error404-wrapper img {
-  width: 100%;
-  max-width: 100%;
-  height: auto; }
-
-.error404-page .main .error404-wrapper .heading {
-  font-size: 3.6rem;
-  margin: 2rem 0; }
-
-
-
 .navbar {
-  font-family: "Open Sans", sans-serif;
+
   font-weight: 600; }
 
 .btn {
-  font-family: "Open Sans", sans-serif;
+
   font-size: 1rem;
   font-weight: 600;
   padding: .75rem 1.5rem;
   text-transform: none;
   letter-spacing: 0;
   border-color: transparent; }
-  .btn.btn-download {
-    padding-left: 4.5rem; }
-  .btn.btn-lg {
-    font-size: 1.125rem;
-    padding: .875rem 1.75rem; }
-  .btn.btn-blue {
-    background-color: #08c;
-    background-image: linear-gradient(45deg, #0088cc 0%, #0099e6 100%); }
-    .btn.btn-blue:hover {
-      background-image: linear-gradient(45deg, #0099e6 0%, #00a3f5 100%); }
-    .btn.btn-blue:active {
-      background-color: #006da3; }
-  .btn.btn-green {
-    background-color: #92d275;
-    background-image: linear-gradient(45deg, #92d275 0%, #a1d888 100%); }
-    .btn.btn-green:hover {
-      background-image: linear-gradient(45deg, #a1d888 0%, #aadc94 100%); }
-    .btn.btn-green:active {
-      background-color: #7ac856; }
-  .btn.btn-green {
-    background-color: #92d275;
-    background-image: linear-gradient(45deg, #92d275 0%, #a1d888 100%); }
-    .btn.btn-green:hover {
-      background-image: linear-gradient(45deg, #a1d888 0%, #aadc94 100%); }
-    .btn.btn-green:active {
-      background-color: #7ac856; }
 
 .main--ishopgo .heading {
-  font-family: "Roboto Condensed", sans-serif;
+
   font-weight: 700; }
 
 @media (max-width: 767px) {
@@ -8211,6 +8002,6 @@ body.modal-open {
     }
       .main--ishopgo .section-heading .heading.center {
         margin-bottom: 48px; }
-        
- 
+
+
 /*# sourceMappingURL=main.css.map */
