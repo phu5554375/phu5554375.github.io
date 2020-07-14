@@ -20,7 +20,7 @@
                 }
             }
         });
-        toggle.html("<div><span></span><span></span><span></span><span></span></div>");
+        toggle.html("<div class=\"aa\"><span></span><span></span><span></span><span></span></div>");
         var toggle_nav = function() {
             var win_top = win.scrollTop();
             if (!body.hasClass("mobile-nav-active")) {
@@ -44,7 +44,7 @@
                 });
                 if (body.hasClass("ui-transparent-nav")) {
                     if (win_top < 24) {
-                        navbar.removeClass("transparent");
+                        navbar.addClass("transparent");
                     }
                 }
             }
@@ -52,6 +52,10 @@
         toggle.on("click", function(e) {
             e.preventDefault();
             toggle_nav();
+        });
+        $('body').on('click', '.navbar-nav > li', function(){
+
+          toggle_nav();
         });
         win.resize(function() {
             var w = $(this).width();
