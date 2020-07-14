@@ -65,7 +65,7 @@
     padding-left: 20px !important;
   }
   .section--form{
-    padding-top: 120px  !important;
+    padding-top: 20px  !important;
   }
   .section-tabs-tow{
     padding-top: 0 !important;
@@ -82,7 +82,7 @@
   .section--specs .container{
     padding: 58px 0 !important;
   }
- 
+
   .section--talk{
     margin-top: -75px;
   }
@@ -440,7 +440,7 @@
 .section-tabs-tow .uti_body:hover .icon1{
   background: url('../img/icons/icond1.svg') no-repeat;
   background-position: 5px 3px;
-} 
+}
 .section-tabs-tow .uti_body .icon2{
   width: 55px;
   height: 50px;
