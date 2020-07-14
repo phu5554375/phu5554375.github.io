@@ -713,6 +713,10 @@
 .temino{
   margin-top: -10px;
 }
+.text-center{
+  margin: 0 auto;
+  text-align: center;
+}
 .section-tabs-tow{
   background: url('../img/back-3.png') no-repeat;
   background-position: center;
