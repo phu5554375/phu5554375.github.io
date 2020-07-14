@@ -25,7 +25,7 @@
             var win_top = win.scrollTop();
             if (!body.hasClass("mobile-nav-active")) {
                 body.addClass("mobile-nav-active");
-                toggle.addClass("active");
+                toggle.removeClass("active");
                 navbar_nav.slideDown(250, function() {
                     navbar_nav.find("li").animate({
                         opacity: 1
