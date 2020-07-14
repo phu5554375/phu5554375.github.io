@@ -68,7 +68,7 @@
     padding-top: 20px  !important;
   }
   .section-tabs-tow{
-    padding-top: 0 !important;
+    padding-top: 120px !important;
   }
   .section--specs .tab-content:hover::after{
     display: none !important;
@@ -636,12 +636,11 @@
 .containerTab p{
   font-weight: 400;
   font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Muli', sans-serif;
 }
 .containerTab h4{
   color: #fff;
   font-size: 15px;
-
 }
 .icon-pop{
   padding: 30px 0;
@@ -749,9 +748,7 @@
   margin-bottom: 67px;
 }
 
-
-@import url('https://fonts.googleapis.com/css2?family=Muli:wght@300;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,700;1,800&display=swap');@-ms-viewport {
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@200;300;400;500;600;700;800&display=swap');
   width: device-width; }
 html {
   box-sizing: border-box;
@@ -782,13 +779,16 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Muli', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.4;
   color: #212529;
   text-align: left;
-  background: url('../img/bg.png') no-repeat; }
+  background: url('../img/bg.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
