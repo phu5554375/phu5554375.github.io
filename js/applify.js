@@ -6,6 +6,18 @@
         md: 992,
         lg: 1200
     };
+    function checkMobile() {
+    if (navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)) {
+        return true;
+    }
+    return false;
+  };
     $.fn.ui_navbar = function() {
         var navbar = this;
         var toggle = $(".ui-mobile-nav-toggle");
@@ -20,7 +32,7 @@
                 }
             }
         });
-        toggle.html("<div class=\"aa\"><span></span><span></span><span></span></div>");
+        toggle.html("<div class=\"aa\"><span></span><span></span><span></span><span></span></div>");
         var toggle_nav = function() {
             var win_top = win.scrollTop();
             if (!body.hasClass("mobile-nav-active")) {
@@ -37,7 +49,16 @@
             } else {
                 body.removeClass("mobile-nav-active");
                 toggle.removeClass("active");
-                
+                navbar_nav.find("li").animate({
+                    opacity: 0
+                }, 100, function() {
+                    navbar_nav.slideUp(200);
+                });
+                if (body.hasClass("ui-transparent-nav")) {
+                    if (win_top < 24) {
+                        navbar.addClass("transparent");
+                    }
+                }
             }
         };
         toggle.on("click", function(e) {
@@ -45,8 +66,10 @@
             toggle_nav();
         });
         $('body').on('click', '.navbar-nav > li', function(){
-
-          toggle_nav();
+          $('body').on('click', '.navbar-nav > li', function(){
+                    if(checkMobile() == true)
+                    toggle_nav();
+          });
         });
 
         win.resize(function() {
