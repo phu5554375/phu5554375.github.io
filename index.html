@@ -5,14 +5,29 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Dai hải</title>
+	<title>Đại hải</title>
 	<link rel="stylesheet" href="css/main.css" />
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-	
 
+	<!-- <nav class="navbar navbar-fixed-top navbar-light bg-white">
+	<div class="container">
+		<a href="#" class="ui-variable-logo navbar-brand" title="iShopGo">
+			<img class="logo-default" src="img/logo2.png" alt="iShopGo">
+		</a>
+		<div class="ui-navigation navbar-right">
+			<ul class="nav navbar-nav">
+				<li><a href="#">Trang chủ</a></li>
+				<li><a href="#" data-scrollto="how-it-works">Tính năng</a></li>
+				<li><a href="#" data-scrollto="how-it-works">Tạo hệ thống</a></li>
+			</ul>
+		</div>
+		<a href="#" class="btn btn-sm ui-gradient-peach pull-right">Đăng ký ngay</a>
+		<a href="#" class="ui-mobile-nav-toggle pull-right"></a>
+
+	</div>
+</nav> -->
 
 	<!-- Main Wrapper -->
 	<div class="main main--ishopgo" role="main">
@@ -21,130 +36,53 @@
 		<!--  Testimonial Section -->
 		<div class="section section--video">
 			<div class="container">
-				
 				<div class="row">
 					<div class="col-md-12 col-xs-12 video">
-						<iframe width="80%" height="415" src="https://www.youtube.com/embed/Yq6AVQTuxss" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe width="80%" height="415" src="https://www.youtube.com/embed/Yq6AVQTuxss" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen=""></iframe>
 					</div>
-					
+				</div>
+				<div class="flex-icon pd-40">
+					<div class="uti_body pd-5">
+						<div class="icon">
+							<a href="#"><img src="img/face.png"></a>
+						</div>
+					</div>
+					<div class="uti_body pd-5">
+						<div class="icon">
+							<a href="#"><img src="img/download-appstore.png"></a>
+						</div>
+					</div>
+					<div class="uti_body pd-5">
+						<div class="icon">
+							<a href="#"><img src="img/download-playstore.png"></a>
+						</div>
+					</div>
 
 				</div>
-				<div class="row">
-					<div class="col-12 col-md-4 before-tab-tow">
-						<div class="uti_body">
-							<div class="icon">
-								<a href="#"><img src="img/facebook.png"></a>
-							</div>
-							
-						</div>
-					</div>
-					<div class="col-12 col-md-4">
-						<div class="uti_body">
-							<div class="icon">
-								<a href="#"><img src="img/download-appstore.png"></a>
-							</div>
-							
-						</div>
-					</div>
-					<div class=" col-12 col-md-4">
-						<div class="uti_body">
-							<div class="icon">
-								<a href="#"><img src="img/download-playstore.png"></a>
-								
-							</div>
-							
-						</div>
-					</div>
-				</div>
-				<div class="row">
+				<div class="row ">
 					<button type="submit" class="btn btn-money">Nạp tiền ngay</button>
 				</div>
+
+
 			</div>
 		</div>
-		
-	
 
-		<!-- <footer class="ui-footer subscribe-footer ui-waves">
-			
-			<div class="footer-copyright bg-dark-gray">
-				<div class="container">
-					<div class="row align-items-center">
-						
-						
 
-					</div>
-				</div>
-			</div>
-		</footer> -->
 	</div>
+
+
+
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.sliderpro.min.js"></script>
-	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery.sliderpro.min.js"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>	 -->
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/applify.js"></script>
 
 	<script type="text/javascript" src="js/main.js"></script>
-
-
-	<script>
-		var btn = $('#gotop');
-
-			$(window).scroll(function() {
-			if ($(window).scrollTop() > 300) {
-				btn.addClass('show');
-			} else {
-				btn.removeClass('show');
-			}
-			});
-
-			btn.on('click', function(e) {
-			e.preventDefault();
-			$('html, body').animate({scrollTop:0}, '300');
-			});
-
-
-		</script>
-		<script>
-			function openTab(tabName) {
-			  var i, x;
-			  x = document.getElementsByClassName("containerTab");
-			  for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
-			  }
-			  document.getElementById(tabName).style.display = "block";
-			}
-			</script>
-			<script>
-
-				$(document).ready(function(){
-
-					 $(window).scroll(function(){
-
-					   if($(window).scrollTop()>300){
-						 $('nav').addClass('black');
-					   }else{
-						 $('nav').removeClass('black');
-					   }
-
-					 });
-
-				});
-				$('a[href^="#"]').on('click', function(event) {
-
-				var target = $(this.getAttribute('href'));
-
-				if( target.length ) {
-					event.preventDefault();
-					$('html, body').stop().animate({
-						scrollTop: target.offset().top
-					}, 1000);
-				}
-
-				});
-			 </script>
-
 
 </body>
 

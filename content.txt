@@ -1,0 +1,28 @@
+GIAO DIỆN TRANG CHỦ ISHOPGO
+Phần mềm bán hàng theo hệ thống 
+Một vũ khí tối thượng không thể thiếu của Boss 
+
+- Xây dựng hệ thống bán hàng bài bản và chuyên nghiệp 
+- Quản lý thành viên, quản lý năng lực bán hàng của hệ thống 
+- Mọi thành viên đều quản lý được hệ thống bán hàng theo tuyến của mình đã xây dựng
+- Chăm sóc và thúc đẩy hệ thống liên tục để tạo ra doanh thu đột phá một cách bền vững 
+
+- Trả thưởng công bằng và minh bạch cho các thành viên.
+- Theo dõi khả năng phát triển hệ thống tuyến dưới của từng thành viên để làm bảng thưởng thủ lĩnh xuất sắc cho phù hợp 
+- Theo dõi doanh số bán hàng của từng  thành viên trên toàn hệ thống để làm bảng thưởng chiến binh bán hàng cho phù hợp 
+- Bảo toàn hệ thống bán hàng không bị gãy nhánh khi có bất kỳ thủ lĩnh nào nghỉ 
+
+- Lập chính sách tri ân trọn đời cho mọi thành viên tham gia và đã cống hiến cho hệ thống. Nghỉ không làm việc vẫn có phúc lợi trọn đời 
+- Chống phá giá trên toàn chuỗi hệ thống bán hàng 
+
+Phần mềm gồm thiên bản web và app nên de dang quản lý mọi lúc mọi nơi 
+- Mỗi thành viên đều có tài khoản quản lý riêng để quản lý hệ thống bán hàng riêng theo tuyến của mình 
+- Phần mềm tích hợp công nghệ affiliate 4.0 giúp các thành viên phát triển hệ thống bán hàng cực nhanh
+- Tích hợp công cụ gửi tin nhắn và thông báo hàng loạt qua app giúp các thành viên chăm sóc hệ thống của mìn một cách chuyên nghiệp 
+
+
+Các mô hình của phần mềm quản lý hệ thống bán hàng 
+
+Khách hàng đang sử dụng phần mềm quản lý hệ thống bán hàng 
+
+Thông tin chân trang

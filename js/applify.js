@@ -6,18 +6,6 @@
         md: 992,
         lg: 1200
     };
-    function checkMobile() {
-    if (navigator.userAgent.match(/Android/i)
-            || navigator.userAgent.match(/webOS/i)
-            || navigator.userAgent.match(/iPhone/i)
-            || navigator.userAgent.match(/iPad/i)
-            || navigator.userAgent.match(/iPod/i)
-            || navigator.userAgent.match(/BlackBerry/i)
-            || navigator.userAgent.match(/Windows Phone/i)) {
-        return true;
-    }
-    return false;
-  };
     $.fn.ui_navbar = function() {
         var navbar = this;
         var toggle = $(".ui-mobile-nav-toggle");
@@ -32,7 +20,7 @@
                 }
             }
         });
-        toggle.html("<div class=\"aa\"><span></span><span></span><span></span><span></span></div>");
+        toggle.html("<div><span></span><span></span><span></span><span></span></div>");
         var toggle_nav = function() {
             var win_top = win.scrollTop();
             if (!body.hasClass("mobile-nav-active")) {
@@ -65,13 +53,6 @@
             e.preventDefault();
             toggle_nav();
         });
-        $('body').on('click', '.navbar-nav > li', function(){
-        
-                    if(checkMobile() == true)
-                    toggle_nav();
-
-        });
-
         win.resize(function() {
             var w = $(this).width();
             var win_top = win.scrollTop();
@@ -238,7 +219,7 @@
                     items: 2
                 },
                 992: {
-                    items: 5
+                    items: 3
                 }
             }
         });
