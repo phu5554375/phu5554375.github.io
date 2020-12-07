@@ -82,7 +82,7 @@ body {
   line-height: 1.4;
   color: #212529;
   text-align: left;
-  background: url(../img/game-van-kiem-1024x612.jpg) no-repeat;
+  background: url(../img/Group32.jpg) no-repeat;
   background-position: center;
   background-size: cover;}
 
@@ -11424,12 +11424,11 @@ body.modal-open {
 */
 .navbar {
   display: block;
-  position: fixed;
+
   width: 100%;
   font-family: "Open Sans", sans-serif;
   align-items: inherit;
-  box-shadow: 0 5px 10px rgba(0, 9, 128, 0.035), 0 7px 18px rgba(0, 9, 128, 0.05);
-  transition: box-shadow 0.35s ease-out, background-color 0.35s ease-out;
+ 
   z-index: 9; }
 
 @media (max-width: 481px) {
@@ -11454,7 +11453,7 @@ body.modal-open {
     margin-top: -18px; } }
 @media (min-width: 740px) {
   .navbar .navbar-brand img {
-    height: 40px;
+    height: 80px;
     margin-top: -20px; } }
 @media (max-width: 481px) {
   .navbar .navbar-brand {
@@ -11702,11 +11701,16 @@ body.modal-open {
     object-fit: cover;
   }
   .section--video{
-    padding-top: 6%;
+    padding-top: 4%;
   }
   .video{
     display: flex;
     justify-content: center;
+    padding-bottom: 40px;
+    padding: 50px;
+    background: url(../img/Video.png) no-repeat;
+    background-position: center;
+    background-size: 75% 100%;
   }
   .flex-icon{
     display: flex;
@@ -11721,19 +11725,28 @@ body.modal-open {
   .btn-money {
     color: #fff;
     margin: 0 auto;
-    width: 46%;
-    height: 61px;
+    width: 300px;
+    height: 66px;
     border-radius: 10px !important;
     background: #84ce65;
     font-size: 19px !important;
-    box-shadow: rgb(255 255 255 / 50%) 0px 10px 20px 0px;
+    background: url(../img/btn-naptien.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+ 
   }
-  .btn-money:hover{
-    background:#4a962a;
-  }
+
   .pd-40{
     padding: 40px 0;
   }
+  .ui-footer{
+    position: relative;
+    bottom: 20px;
+    width: 100%;
+  }
+  /* .video{
+    background: url(../img/Video.png);
+  } */
 
   @media (max-width: 768px) {
     .flex-icon{
@@ -11746,13 +11759,16 @@ body.modal-open {
       padding: 5px 0 !important;
     }
     .btn-money {
-      padding-bottom: 30px;
+      padding-bottom: 6px;
       margin: 0 auto;
-      width: 90%;
+      width: 49%;
       height: 51px;
     }
     body{
       padding-bottom: 50px;
+    }
+    .video{
+      background: none !important;
     }
   }
 
