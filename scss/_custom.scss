@@ -1,0 +1,310 @@
+body{
+	line-height: 1.4375;
+	font-family: $ff-opensans;
+}
+.navbar{
+	font-family: $ff-opensans;
+	font-weight: 600;
+}
+.btn {
+  font-family: $ff-opensans;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: .75rem 1.5rem;
+  text-transform: none;
+  letter-spacing: 0;
+  border-color: transparent;
+  &.btn-download{
+  	padding-left: 4.5rem;
+  }
+  &.btn-lg{
+  	font-size: 1.125rem;
+  	padding: .875rem 1.75rem;
+  }
+  &.btn-blue{
+  	background-color: $c-blue;
+  	background-image: linear-gradient(45deg, $c-blue 0%, lighten($c-blue, 5%) 100%);
+  	&:hover{
+  		background-image: linear-gradient(45deg, lighten($c-blue, 5%) 0%, lighten($c-blue, 8%) 100%);
+  	}
+  	&:active{
+  		background-color: darken($c-blue, 8%);
+  	}
+  }
+  &.btn-green{
+  	background-color: $c-green;
+  	background-image: linear-gradient(45deg, $c-green 0%, lighten($c-green, 5%) 100%);
+  	&:hover{
+  		background-image: linear-gradient(45deg, lighten($c-green, 5%) 0%, lighten($c-green, 8%) 100%);
+  	}
+  	&:active{
+  		background-color: darken($c-green, 8%);
+  	}
+  }
+  &.btn-green{
+  	background-color: $c-green;
+  	background-image: linear-gradient(45deg, $c-green 0%, lighten($c-green, 5%) 100%);
+  	&:hover{
+  		background-image: linear-gradient(45deg, lighten($c-green, 5%) 0%, lighten($c-green, 8%) 100%);
+  	}
+  	&:active{
+  		background-color: darken($c-green, 8%);
+  	}
+  }
+}
+
+.main{
+	&--ishopgo{
+		.heading{
+			font-family: $ff-roboto-c;
+			font-weight: 700;
+		}
+		.ui-hero.ui-waves {
+		  margin: 0 0 -2rem 0;
+		  padding: 3rem 0 5rem 0;
+			@media (min-width: 576px) {
+		    padding: 3rem 0 6rem 0;
+			}
+			@media (min-width: 768px) {
+		    padding: 2.5rem 0 8rem 0;
+		  
+			}
+			@media (min-width: 1200px) {
+		    padding: 3rem 0 9rem 0;
+			}
+			@media (min-width: 1681px) {
+		    padding: 4rem 0 10rem 0;
+			}
+		}
+		.ui-hero{
+			@media (max-width: $screen-sm-max){
+				text-align: center;
+			}
+			.heading{
+				margin: 0 0 16px;
+				line-height: 1.2;
+				font-size: 36px;
+				@media (min-width: $screen-md){
+					font-size: 48px;
+					margin: 0 0 16px;
+				}
+			}
+			.paragraph{
+				line-height: 1.25;
+				font-family: $ff-opensans;
+				font-size: 16px;
+				font-weight: 500;
+				color: #fff;
+				@media (min-width: $screen-md){
+					font-size: 20px;
+				}
+			}
+			.actions{
+				margin: 28px 0 24px;
+				position: relative;
+			}
+			.img-wrap{
+				padding: 24px 0;
+			}
+		}
+
+		.section{
+			padding: 3rem 0;
+			@media (min-width: $screen-md){
+				padding: 5rem 0;
+			}
+			&-heading{
+				margin-bottom: 2rem;
+				@media (min-width: $screen-md){
+					margin-bottom: 3rem;
+				}
+				.heading{
+					position: relative;
+					color: #92d275;
+					&.center{
+						margin-bottom: 48px;
+						&:after{
+							content: "";
+							display: block;
+							position: absolute;
+							bottom: -24px;
+							left: 50%;
+							margin-left: -64px;
+							width: 128px;
+							height: 2px;
+							background-color: #e0e0e0;
+
+						}
+					}
+				}
+				.paragraph {
+				  display: inline-block;
+				  max-width: 560px;
+				  font-size: 1.125rem;
+				  margin-bottom: 1rem;
+				}
+			}
+			&--fets{
+				.ui-icon-block{
+					padding: 8px 4px;
+					@media (min-width: $screen-md){
+						padding: 16px 8px;
+					}
+					&__icon{
+						margin: 0 0 20px;
+						img{
+							display: block;
+							height: 96px;
+							margin: 0 auto;
+						}
+					}
+					&__title{
+						margin: 0 0 8px;
+						font-size: 1rem;
+						font-weight: 700;
+						color: #333;
+						@media (min-width: $screen-md){
+							font-size: 1.25rem;
+							margin: 0 0 12px;
+						}
+					}
+					&__sub{
+						font-size: .875rem;
+						color: #777;
+						@media (min-width: $screen-md){
+							font-size: 1rem;
+						}
+					}
+				}
+			}
+			&--specs{
+				.section-heading{
+					margin: 0 0 2rem;
+					.heading{
+						margin: 0 0 12px;
+						line-height: 1.25;
+						font-size: 28px;
+						font-weight: 600;
+						color: #fff;
+					}
+					.paragraph{
+						font-size: 1rem;
+					}
+				}
+				.ui-icon-block{
+					font-size: 1rem;
+					@media (min-width: $screen-md){
+						font-size: 1.25rem;
+					}
+				}
+			}
+		}
+
+		.ui-testimonials{
+			&__content{
+				line-height: 1.75rem;
+				font-size: 1.125rem;
+				font-weight: 600;
+				color: #555;
+				height: 1.75rem * 4;
+			}
+			.item{
+				 .ui-card{
+				 		&:before{
+				 			opacity: .1;
+				 		}
+				 }
+			}
+			.user{
+				display: flex;
+				align-items: center;
+				padding: 1.5rem 0;
+				.avatar{
+					flex: 0 0 auto;
+					img{
+						display: block;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+				.info{
+					flex: 1 1 auto;
+					min-width: 0;
+					.heading{
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+					.sub-heading{
+						font-size: .75rem;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+				}
+			}
+		}
+
+		.ui-footer {
+			margin-top: 4rem;
+			&.ui-waves {
+				.footer-bg {
+				  padding: 12rem 0 5rem 0;
+				}
+			}
+			.ui-card{
+				&--reg{
+					.card-header{
+						padding-bottom: 2.25rem;
+						.heading{
+							margin: 0 0 .5rem;
+							font-size: 1.5rem;
+							font-weight: 700;
+							color: #fff;
+						}
+						.paragraph{
+							line-height: 1.375;
+							font-size: .875rem;
+							color: #fff;
+						}
+					}
+					.form-control{
+						padding: 1rem;
+					}
+				}
+			}
+			.download-section{
+				padding-top: 3rem;
+				.heading{
+					margin: 0 0 .5rem;
+					font-size: 1.75rem;
+					font-weight: 700;
+					color: #fff;
+				}
+				.paragraph{
+					font-size: 1rem;
+					color: #fff;
+				}
+				.actions{
+					margin: 1.75rem 0 0;
+					&__download{
+						margin: 0 .25rem;
+						img{
+							height: 4rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.owl-theme .owl-dots .owl-dot span{
+	background-color: #ccc;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, 
+.owl-theme .owl-dots .owl-dot:hover span{
+	background-color: $c-green;
+}
