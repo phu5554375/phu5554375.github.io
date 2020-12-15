@@ -12,17 +12,19 @@ function Login(props) {
   const password = useFormInput('');
   const [error, setError] = useState(null);
   const [redirect, setRedirect] = useState(false);
-  const[JwtSession, setJwtSession] = useState('');
+
   
   // handle button click of login form
   const handleLogin = () => {
     setError(null);
     setLoading(true);
+    
     axios.post('http://dev.ogid.daihaijsc.com/users/login', { username: username.value, password: password.value, applicationId:'08dbd700-1f38-11eb-91ff-dab8a2794d67' }).then(response => {
+      const red = response.data;  
       setLoading(false);
-      setJwtSession(response.jwt_access_toke);
       setUserSession(response.data.id, response.data.user);
-      console.log(props);
+      localStorage.setItem( "userId", red.data.userId);
+      localStorage.setItem( "sessionId", red.data.sessionId  );
       setRedirect(true);
     }).catch(error => {
       setLoading(false);
