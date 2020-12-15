@@ -2,8 +2,9 @@
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
+
 const Tag = '[src.store.actions]'
-class jwtService extends FuseUtils.EventEmitter {
+class jwtService  {
     init() {
         this.handleAuthentication();
     }
@@ -20,15 +21,16 @@ class jwtService extends FuseUtils.EventEmitter {
         if (!access_token) {
             return false;
         }
-        const decoded = jwtDecode(access_token);
-        const currentTime = Date.now() / 1000;
-        if (decoded.exp < currentTime) {
-            console.warn('access token expired');
-            return false;
-        } else {
-            return true;
-        }
+       
+        // const currentTime = Date.now() / 1000;
+        // if (decoded.exp < currentTime) {
+        //     console.warn('access token expired');
+        //     return false;
+        // } else {
+        //     return true;
+        // }
     };
+    
 
     getAccessToken = () => {
         return window.localStorage.getItem('jwt_access_token');

@@ -12,6 +12,7 @@ function Login(props) {
   const password = useFormInput('');
   const [error, setError] = useState(null);
   const [redirect, setRedirect] = useState(false);
+  const[JwtSession, setJwtSession] = useState('');
   
   // handle button click of login form
   const handleLogin = () => {
