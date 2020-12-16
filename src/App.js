@@ -8,9 +8,9 @@ import Dangky from './components/Dangky';
 import Bank from './components/Bank';
 import Event from './components/Event';
 import FogotPass from './components/FogotPass';
+import UpdateProfile from './components/UpdateProfile';
 
-import PrivateRoute from './Utils/PrivateRoute';
-import PublicRoute from './Utils/PublicRoute';
+
 import { getToken, removeUserSession, setUserSession } from './Utils/Common';
 
 import './App.css';
@@ -58,6 +58,10 @@ function App() {
         </div>
       </nav>
     <Switch>
+         
+          <Route path="/updateprofile">
+            <UpdateProfile />
+          </Route>
         <Route path="/fogotpass">
             <FogotPass />
           </Route>

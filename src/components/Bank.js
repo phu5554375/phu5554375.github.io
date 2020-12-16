@@ -1,15 +1,44 @@
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+
 function Bank() {
-    
+  const [loading, setLoading] = useState(false);
+  const merchantAccount = useFormInput("");
+  const pinCard = useFormInput("");
+  const cardSerial = useFormInput("");
+  const cardPrice = useFormInput("");
+  const [error, setError] = useState(null);
+  const [state, setState] = useState('');
+  // handle button click of login form
+  const handleCard = () => {
+ 
+    axios
+      .post("http://dev.ogid.daihaijsc.com/users/login", {
+        merchantAccount: merchantAccount.value,
+        pinCard: pinCard.value,
+        cardSerial: cardSerial.value,
+        cardPrice: cardPrice.value,
+      })
+      .then((response) => {
+        const red = response.data;
+        setState({ red: red });
+     
+      })
+      .catch((error) => {
+        setLoading(false);
+        setError("Something went wrong. Please try again later.");
+      });
+  };
+  const onHandleChange = (event) => {
+    console.log();
+  }
   return (
     <div>
          <div className="main main--ishopgo" role="main">
         {/*  Testimonial Section */}
         <div className="section section--video">
           <div className="container">
-            <h3 className="title-page">Ngân hàng</h3>
+            <h3 className="title-page">Nạp tiền bằng thẻ cào</h3>
             <div className="row justify-content-center">
               <div className="col-12 col-md-8 left-content">
                 <h4>quy định - hình thức - quy đổi</h4>
@@ -83,6 +112,41 @@ function Bank() {
                 <div className="card-body">
                   <div className="title"><img src="img/Title1.png" /></div>
                   <form autoComplete="on" id="contact-form" name="contact-form">
+
+                  <div className="form-group">
+                        <div className="form-group">
+                          <input
+                            className="input form-control"
+                            placeholder="Tên đăng nhập"
+                            type="text"
+                            
+                            onChange={onHandleChange}
+                           
+                          />
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <div className="form-group">
+                          <input
+                            className="input form-control"
+                            placeholder="Mã số thẻ cào"
+                            type="text"
+                            {...pinCard}
+                            
+                          />
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <div className="form-group">
+                          <input
+                            className="input form-control"
+                            placeholder="Seri thẻ cào"
+                            type="text"
+                            {...cardSerial}
+                            
+                          />
+                        </div>
+                      </div>
                     <div className="form-group">
                       <div className="form-group">
                         <select className="form-control">
@@ -93,22 +157,18 @@ function Bank() {
                         </select>
                       </div>
                     </div>
-                    <div className="form-group">
-                      <div className="form-group">
-                        <input className="input form-control" placeholder="Tên nhân vật" />
-                      </div>
-                    </div>
+                    
                     <div className="form-group">
                       <div className="form-group">
                         <select className="form-control">
-                          <option>Sever </option>
-                          <option>Sever 1</option>
-                          <option>Sever 2</option>
-                          <option>Sever 3</option>
+                          <option>Loại thẻ </option>
+                          <option>Viettel</option>
+                          <option>Mobiphone</option>
+                          <option>Vinaphone</option>
                         </select>
                       </div>
                     </div>
-                    <button type="submit" data-toggle="modal" data-target="#happyModal" className="btn btn-pri btn-money" />
+                    <button type="submit" onClick={handleCard} className="btn btn-pri btn-money" />
                   </form>
                 </div>
               </div>
@@ -138,5 +198,14 @@ function Bank() {
    </div>
   );
 }
-
+const useFormInput = (initialValue) => {
+  const [value, setValue] = useState(initialValue);
+  const handleCard = (e) => {
+    setValue(e.target.value);
+  };
+  return {
+    value,
+    onChange: handleCard,
+  };
+};
 export default Bank;

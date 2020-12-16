@@ -7,15 +7,30 @@ function Home() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleClickMomo = () => {
+    const headers = {
+      'Authorization': localStorage.getItem("sessionId")
+    }
     axios
-      .post("http://dev.ogid.daihaijsc.com/payment/atm-charge", {
-        merchant_id: 6211,
+      .post("http://www.nganluong.vn/service/mobileCard/charge", {"merchant_id": 6211}, {
+        headers: headers
       })
       .then((response) => {
         const red = response.data;
-        localStorage.setItem("userId", red.data.userId);
-        localStorage.setItem("sessionId", red.data.sessionId);
-        window.location.href = "https://www.nganluong.vn";
+         window.location.href = red.data;
+      })
+      .catch((error) => {});
+  };
+  const handleClickCard = () => {
+    const headers = {
+      'Authorization': localStorage.getItem("sessionId")
+    }
+    axios
+      .post("http://dev.ogid.daihaijsc.com/payment/atm-charge", {"amount": 10000}, {
+        headers: headers
+      })
+      .then((response) => {
+        const red = response.data;
+         window.location.href = red.data;
       })
       .catch((error) => {});
   };
@@ -109,7 +124,7 @@ function Home() {
             <a onClick={handleClickMomo} className="btn btn-pri btn-momo" />
           </div>
           <div className="col-12">
-            <a onClick={handleClickMomo} className="btn btn-pri btn-card" />
+            <a onClick={handleClickCard} className="btn btn-pri btn-card" />
           </div>
           <div className="col-12">
             <a href="bank.html" className="btn btn-pri btn-bank" />
