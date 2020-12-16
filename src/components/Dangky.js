@@ -57,6 +57,31 @@ function Dangky(props) {
                           type="password" {...password} autoComplete="new-password" />
                         </div>
                       </div>
+                      <div className="form-group">
+                        <div className="form-group">
+                          <input 
+                          className="input form-control" 
+                          placeholder="Nhập lại mật khẩu" 
+                          type="password" {...password} autoComplete="new-password" />
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <div className="form-group">
+                          <input 
+                          className="input form-control" 
+                          placeholder="Số điện thoại" 
+                          type="password" {...password} autoComplete="new-password" />
+                        </div>
+                      </div>
+                      <div className="form-group">
+                        <div className="form-group">
+                          <input 
+                          className="input form-control" 
+                          placeholder="Email" 
+                          type="password" {...password} autoComplete="new-password" />
+                        </div>
+                      </div>
+                      
                       <button type="button" 
                       value={loading ? 'Loading...' : 'Login'} 
                       onClick={handleLogin} disabled={loading} 

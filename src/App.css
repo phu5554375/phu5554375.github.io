@@ -11237,6 +11237,7 @@ body.modal-open {
   background: url(img/Video.png) no-repeat;
   background-position: center;
   background-size: 73% 105%;
+  height: 450px;
 }
 .flex-icon {
   display: flex;
@@ -11382,7 +11383,7 @@ body.modal-open {
   text-align: center;
   padding: 15px 0;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .dk .reg{
   color: #d2691e;
