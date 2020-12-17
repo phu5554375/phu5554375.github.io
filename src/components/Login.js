@@ -4,7 +4,7 @@ import { setUserSession } from "../Utils/Common";
 import { setJwtSession } from "../Utils/jwtService";
 import { Redirect } from "react-router-dom";
 
-// import myFirstFont from '../fonts/SFUJamaicaRegular.TTF'
+import myFirstFont from '../fonts/SFUJamaicaRegular.TTF'
 
 function Login(props) {
   const [loading, setLoading] = useState(false);

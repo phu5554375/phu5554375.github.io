@@ -20,20 +20,7 @@ function Home() {
       })
       .catch((error) => {});
   };
-  const handleClickCard = () => {
-    const headers = {
-      'Authorization': localStorage.getItem("sessionId")
-    }
-    axios
-      .post("http://dev.ogid.daihaijsc.com/payment/atm-charge", {"amount": 10000}, {
-        headers: headers
-      })
-      .then((response) => {
-        const red = response.data;
-         window.location.href = red.data;
-      })
-      .catch((error) => {});
-  };
+  
   return (
     <div>
       {/* Main Wrapper */}
@@ -124,7 +111,7 @@ function Home() {
             <a onClick={handleClickMomo} className="btn btn-pri btn-momo" />
           </div>
           <div className="col-12">
-            <a onClick={handleClickCard} className="btn btn-pri btn-card" />
+            <a href="/cardmobile" className="btn btn-pri btn-card" />
           </div>
           <div className="col-12">
             <a href="bank.html" className="btn btn-pri btn-bank" />

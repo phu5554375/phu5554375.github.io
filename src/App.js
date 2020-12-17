@@ -5,7 +5,7 @@ import Home from './components/Home';
 import Introl from './components/Introl';
 import Login from './components/Login';
 import Dangky from './components/Dangky';
-import Bank from './components/Bank';
+import CardMobile from './components/CardMobile';
 import Event from './components/Event';
 import FogotPass from './components/FogotPass';
 import UpdateProfile from './components/UpdateProfile';
@@ -65,8 +65,8 @@ function App() {
         <Route path="/fogotpass">
             <FogotPass />
           </Route>
-        <Route path="/bank">
-            <Bank />
+        <Route path="/cardmobile">
+            <CardMobile />
           </Route>
           <Route path="/event">
             <Event />
