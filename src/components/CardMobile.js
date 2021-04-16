@@ -1,39 +1,174 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { Table, Select } from "antd";
+import { Modal, Button } from "react-bootstrap";
+import { Redirect } from "react-router-dom";
+const { Column } = Table;
+const servers = [
+  {
+    serverId: 1,
+    name: "S1 - Cửu Châu",
+  },
+];
+const types = [
+  {
+    key: "vt",
+    name: "Viettel",
+  },
+  {
+    key: "mb",
+    name: "Mobile",
+  },
+  {
+    key: "vn",
+    name: "Vinaphone",
+  },
+];
+let countCheck = 0;
 
 function CardMobile() {
   const [loading, setLoading] = useState(false);
+  const [iscalling, setIscalling] = useState(false);
   const merchantAccount = useFormInput("");
-  const pinCard = useFormInput("");
-  const cardSerial = useFormInput("");
-  const cardPrice = useFormInput("");
-  const [error, setError] = useState(null);
-  const [state, setState] = useState('');
+  const code = useFormInput("");
+  const serial = useFormInput("");
+  const type = useFormInput("");
+  const serverId = useFormInput("");
+  const [redirect, setRedirect] = useState(false);
+  const [listMoney, setlistMoney] = useState([]);
+  const [listServer, setListServer] = useState({});
+
+  const [amount, setamount] = useState(10000);
+  const [severs, setsevers] = useState(1);
+  const [tyrpes, setrtypes] = useState("viettel");
+  const [show, setShow] = useState(false);
+  const [transId, settransId] = useState(null);
+  const handleClose = () => setShow(false);
   // handle button click of login form
   const handleCard = () => {
- 
+    const headers = {
+      Authorization: localStorage.getItem("sessionId"),
+    };
+
     axios
-      .post("http://dev.ogid.daihaijsc.com/payment/mobile-charge", {
-        merchantAccount: merchantAccount.value,
-        pinCard: pinCard.value,
-        cardSerial: cardSerial.value,
-        cardPrice: cardPrice.value,
-      })
+      .post(
+        "http://dev.ogid.daihaijsc.com/payment/mobile-charge",
+        {
+          money: amount - 0,
+          code: code.value,
+          serverId: parseInt(severs),
+          serial: serial.value,
+          type: tyrpes,
+        },
+        { headers: headers }
+      )
+
       .then((response) => {
         const red = response.data;
-        setState({ red: red });
+        if (red.status != 0) {
+          alert(red.message);
+        } else {
+          let transId = red.data;
+          localStorage.setItem("transId ", transId);
+          settransId(transId);
+          setShow(true);
+          // setIscalling(true);
+        }
       })
       .catch((error) => {
         setLoading(false);
-        setError("Something went wrong. Please try again later.");
       });
   };
-  const onHandleChange = (event) => {
-    console.log();
-  }
+  useEffect(() => {
+    axios
+      .get(
+        "http://dev.ogid.daihaijsc.com/charging-package?application_id=08dbd700-1f38-11eb-91ff-dab8a2794d67&charging_method=MOBILE_CHARGE",
+        {}
+      )
+      .then((response) => {
+        const red = response.data;
+        setlistMoney(red.data);
+      })
+      .catch((error) => {});
+    const sectionId = localStorage.getItem("sessionId");
+    if (sectionId == null) {
+      setRedirect(true);
+    }
+  }, []);
+  useEffect(() => {
+    axios
+      .get("http://dev.ogid.daihaijsc.com/application_servers/ckcv", {})
+      .then((response) => {
+        const red = response.data;
+        setListServer(red.data);
+      })
+      .catch((error) => {});
+    const sectionId = localStorage.getItem("sessionId");
+    if (sectionId == null) {
+      setRedirect(true);
+    }
+  }, []);
+  const [timer, setTimer] = useState(0);
+  const increment = useRef(null);
+  const handleStart = (transId) => {
+    const headers = {
+      Authorization: localStorage.getItem("sessionId"),
+    };
+    increment.current = setInterval(() => {
+      axios
+        .get("http://dev.ogid.daihaijsc.com/transactions?id=" + transId, {
+          headers: headers,
+        })
+        .then((response) => {
+          const red = response.data;
+          console.log("status=" + red.data.status);
+          if (red.data.status != 0 && red.data.status != 1) {
+            if (red.data.status == 2) {
+              clearInterval(increment.current);
+              window.location.href = "/congrats";
+              setShow(false);
+            } else {
+              clearInterval(increment.current);
+              window.location.href = "/error";
+            }
+          }
+          // countCheck += 1;
+        })
+        .catch((error) => {
+          // countCheck += 1;
+        });
+      setTimer((timer) => timer + 1);
+    }, 30000);
+  };
+  useEffect(() => {
+    if (timer >= 10) {
+      clearInterval(increment.current);
+    }
+  }, [timer]);
+
+  // useEffect(() => {
+  //   if (iscalling) {
+  //     handleStart();
+  //   }
+  // }, [iscalling]);
+  useEffect(() => {
+    if (transId != null) {
+      handleStart(transId);
+    }
+  }, [transId]);
+  const onChangeMoney = (event) => {
+    setamount(event.target.value);
+  };
+  const onChangeSever = (event) => {
+    setsevers(event.target.value);
+  };
+  const onChangeType = (event) => {
+    setrtypes(event.target.value);
+  };
+
   return (
     <div>
-         <div className="main main--ishopgo" role="main">
+      <div className="main main--ishopgo" role="main">
         {/*  Testimonial Section */}
         <div className="section section--video">
           <div className="container">
@@ -41,131 +176,118 @@ function CardMobile() {
             <div className="row justify-content-center">
               <div className="col-12 col-md-8 left-content">
                 <h4>quy định - hình thức - quy đổi</h4>
-                <p>Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang
-                  phục vụ
-                  cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ
-                  những
-                  năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu
-                  văn bản.
+                <p className="mt-1">
+                  Người chơi sau khi nạp thành công đăng nhập vào game, chọn
+                  đúng nhân vật để được cộng vàng vào nhân vật đó.
                 </p>
-                <table className="table table-striped table-bordered table--whs-prc">
-                  <thead>
-                    <tr>
-                      <th className="whs-prc-num">Mệnh giá thẻ cào</th>
-                      <th className="whs-prc-qty">Vàng</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="whs-prc-num">
-                        <div className="whs-prc-num__wrp">
-                          <div className="whs-prc-num__mai">100k</div>
-                        </div>
-                      </td>
-                      <td className="whs-prc-num">
-                        <div className="whs-prc-num__wrp">
-                          <div className="whs-prc-num__mai">7.000.000 vàng</div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="whs-prc-num">
-                        <div className="whs-prc-num__wrp">
-                          <div className="whs-prc-num__mai">100k</div>
-                        </div>
-                      </td>
-                      <td className="whs-prc-num">
-                        <div className="whs-prc-num__wrp">
-                          <div className="whs-prc-num__mai">7.000.000 vàng</div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="whs-prc-num">
-                        <div className="whs-prc-num__wrp">
-                          <div className="whs-prc-num__mai">100k</div>
-                        </div>
-                      </td>
-                      <td className="whs-prc-num">
-                        <div className="whs-prc-num__wrp">
-                          <div className="whs-prc-num__mai">7.000.000 vàng</div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="whs-prc-num">
-                        <div className="whs-prc-num__wrp">
-                          <div className="whs-prc-num__mai">100k</div>
-                        </div>
-                      </td>
-                      <td className="whs-prc-num">
-                        <div className="whs-prc-num__wrp">
-                          <div className="whs-prc-num__mai">7.000.000 vàng</div>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+
+                <Table
+                  dataSource={listMoney}
+                  pagination={false}
+                  scroll={{ y: 300 }}
+                >
+                  <Column
+                    title="Tiền nạp"
+                    dataIndex="packageAmount"
+                    key="packageAmount"
+                  />
+                  <Column
+                    title="Thành vàng"
+                    dataIndex="description"
+                    key="description"
+                  />
+                </Table>
               </div>
               <div className="col-12 col-md-4 right-content">
                 <div className="card-body">
-                  <div className="title"><img src="img/Title1.png" /></div>
+                  <div className="title">
+                    <img src="img/Title1.png" />
+                  </div>
                   <form autoComplete="on" id="contact-form" name="contact-form">
+                    {/* <div className="form-group">
+                      <div className="form-group">
+                        <label>Mời bạn chọn server</label>
+                        <select
+                          onChange={onChangeSever}
+                          className="form-control"
+                        >
+                          {servers.map((s) => (
+                            <option value={s.serverId}>{s.name}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </div> */}
+                    <div className="form-group">
+                      <div className="form-group">
+                        <select
+                          onChange={onChangeSever}
+                          dataSource={listServer}
+                          className="form-control"
+                        >
+                          {listServer.length > 0 &&
+                            listServer.map((item, key) => {
+                              return (
+                                <option key={key} value={item.serverId}>
+                                  {item.name}
+                                </option>
+                              );
+                            })}
+                        </select>
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <div className="form-group">
+                        <label>Mời bạn chọn loại thẻ</label>
+                        <select
+                          onChange={onChangeType}
+                          className="form-control"
+                        >
+                          {types.map((s) => (
+                            <option value={s.key}>{s.name}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
 
-                  <div className="form-group">
-                        <div className="form-group">
-                          <input
-                            className="input form-control"
-                            placeholder="Tên đăng nhập"
-                            type="text"
-                            {...merchantAccount}
-                          />
-                        </div>
-                      </div>
-                      <div className="form-group">
-                        <div className="form-group">
-                          <input
-                            className="input form-control"
-                            placeholder="Mã số thẻ cào"
-                            type="text"
-                            {...pinCard}
-                            
-                          />
-                        </div>
-                      </div>
-                      <div className="form-group">
-                        <div className="form-group">
-                          <input
-                            className="input form-control"
-                            placeholder="Seri thẻ cào"
-                            type="text"
-                            {...cardSerial}
-                            
-                          />
-                        </div>
-                      </div>
                     <div className="form-group">
                       <div className="form-group">
-                        <select className="form-control">
-                          <option>Chọn mệnh giá gói nạp </option>
-                          <option>50k</option>
-                          <option>100k</option>
-                          <option>500k</option>
+                        <input
+                          className="input form-control"
+                          placeholder="Mã số thẻ cào"
+                          type="number"
+                          {...code}
+                        />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <div className="form-group">
+                        <input
+                          className="input form-control"
+                          placeholder="Seri thẻ cào"
+                          type="number"
+                          {...serial}
+                        />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <div className="form-group">
+                        <select
+                          onChange={onChangeMoney}
+                          dataSource={listMoney}
+                          className="form-control"
+                        >
+                          {listMoney.length > 0 &&
+                            listMoney.map((item, key) => {
+                              return (
+                                <option key={key} value={item.packageAmount}>
+                                  {item.packageAmount}
+                                </option>
+                              );
+                            })}
                         </select>
                       </div>
                     </div>
-                    
-                    <div className="form-group">
-                      <div className="form-group">
-                        <select className="form-control">
-                          <option>Loại thẻ </option>
-                          <option>Viettel</option>
-                          <option>Mobiphone</option>
-                          <option>Vinaphone</option>
-                        </select>
-                      </div>
-                    </div>
-                    <button type="submit" onClick={handleCard} className="btn btn-pri btn-money" />
+                    <a onClick={handleCard} className="btn btn-pri btn-money" />
                   </form>
                 </div>
               </div>
@@ -179,12 +301,19 @@ function CardMobile() {
               <div className="row align-items-center">
                 {/* Copyright */}
                 <div className="col-12">
-                  <p style={{color: '#000', fontSize: '14px', margin: 0}}><b>CÔNG TY CỔ PHẦN PHÁT TRIỂN KINH DOANH CÔNG
-                      NGHỆ ĐẠI HẢI</b></p>
-                  <p style={{color: '#000', fontSize: '14px', margin: 0}}>Địa chỉ: Số 2 ngõ 136 phố Nguyễn An Ninh,
-                    Phường Tương Mai, Quận Hoàng Mai, Thành phố Hà Nội, Việt Nam</p>
-                  <p style={{color: '#000', fontSize: '14px', margin: 0}}>Phòng giao dịch: sảnh A office tòa Vinhomes
-                    Westpoint Đỗ Đức Dục, Nam Từ Liêm, TP Hà Nội </p>
+                  <p style={{ color: "#000", fontSize: "14px", margin: 0 }}>
+                    <b>
+                      CÔNG TY CỔ PHẦN PHÁT TRIỂN KINH DOANH CÔNG NGHỆ ĐẠI HẢI
+                    </b>
+                  </p>
+                  <p style={{ color: "#000", fontSize: "14px", margin: 0 }}>
+                    Địa chỉ: Số 2 ngõ 136 phố Nguyễn An Ninh, Phường Tương Mai,
+                    Quận Hoàng Mai, Thành phố Hà Nội, Việt Nam
+                  </p>
+                  <p style={{ color: "#000", fontSize: "14px", margin: 0 }}>
+                    Phòng giao dịch: sảnh A office tòa Vinhomes Westpoint Đỗ Đức
+                    Dục, Nam Từ Liêm, TP Hà Nội{" "}
+                  </p>
                 </div>
                 {/* Social Icons */}
               </div>
@@ -192,7 +321,15 @@ function CardMobile() {
           </div>
         </footer>
       </div>
-   </div>
+      <Modal show={show}>
+        <Modal.Body>
+          <div className="col-12">
+            <div className="loader"></div>
+            <p className="text-cm">Xin chờ trong giây lát....!</p>
+          </div>
+        </Modal.Body>
+      </Modal>
+    </div>
   );
 }
 const useFormInput = (initialValue) => {

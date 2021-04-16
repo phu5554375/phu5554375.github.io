@@ -17,7 +17,7 @@ function FormError(props) {
   }
   return <div className="form-warning">{props.errorMessage}</div>;
 }
-function Bank() {
+function Momo() {
   const onChangeMoney = (event) => {
     setamount(event.target.value);
   };
@@ -27,7 +27,6 @@ function Bank() {
   const [severs, setsevers] = useState(1);
   const [redirect, setRedirect] = useState(false);
   const serverId = useFormInput("");
-  const [listServer, setListServer] = useState({});
   const handleMomo = () => {
     const headers = {
       Authorization: localStorage.getItem("sessionId"),
@@ -36,7 +35,7 @@ function Bank() {
       axios
       .post(
         "http://dev.ogid.daihaijsc.com/payment/atm-charge",
-        { amount: amount - 0, serverId: parseInt(severs) },
+        { amount: amount - 0, serverId: severs },
         {
           headers: headers,
         }
@@ -59,22 +58,6 @@ function Bank() {
     }
     
   };
-  useEffect(() => {
-    axios
-      .get(
-        "http://dev.ogid.daihaijsc.com/application_servers/ckcv",
-        {}
-      )
-      .then((response) => {
-        const red = response.data;
-        setListServer(red.data);
-      })
-      .catch((error) => {});
-    const sectionId = localStorage.getItem("sessionId");
-    if (sectionId == null) {
-      setRedirect(true);
-    }
-  }, []);
   useEffect(() => {
     axios
       .get(
@@ -103,11 +86,11 @@ function Bank() {
         {/*  Testimonial Section */}
         <div className="section section--video">
           <div className="container">
-            <h3 className="title-page">Nạp tiền ngân hàng</h3>
+            <h3 className="title-page">Nạp tiền Momo</h3>
             <div className="row justify-content-center">
               <div className="col-12 col-md-8 left-content">
                 <h4>quy định - hình thức - quy đổi</h4>
-                <p className="mt-1">Người chơi sau khi nạp thành công đăng nhập vào game, chọn đúng nhân vật để được cộng vàng vào nhân vật đó.</p>
+                <p style="color:#ffe25e;">Người chơi sau khi nạp thành công đăng nhập vào game, chọn đúng nhân vật để được cộng vàng vào nhân vật đó.</p>
                 <Table
                   dataSource={listMoney}
                   pagination={false}
@@ -131,32 +114,29 @@ function Bank() {
                     <img src="img/Title1.png" />
                   </div>
                   <form autoComplete="on" id="contact-form" name="contact-form">
-                  <div className="form-group">
+                    <div className="form-group">
                       <div className="form-group">
+                        <label>Mời bạn chọn server</label>
                         <select
                           onChange={onChangeSever}
-                          dataSource={listServer}
                           className="form-control"
                         >
-                          {listServer.length > 0 &&
-                            listServer.map((item, key) => {
-                              return (
-                                <option key={key} value={item.serverId}>{item.name}</option>
-                              );
-                            })}
+                          {servers.map((s) => (
+                            <option value={s.serverId}>{s.name}</option>
+                          ))}
                         </select>
                       </div>
                     </div>
                    
                     <div className="form-group">
                       <div className="form-group">
-                      <label>Nhập số tiền cần nạp</label>
                         <input
                           type="number"
                           name="number"
                           className="form-control"
-                          placeholder="Nhập số tiền"
+                          placeholder="Nhập số tiền cần nạp"
                           onChange={onChangeMoney}
+                          
                           {...amount}
                           required
                         />
@@ -213,4 +193,4 @@ const useFormInput = (initialValue) => {
     handleMomo: handleMomo,
   };
 };
-export default Bank;
+export default Momo;

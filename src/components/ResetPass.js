@@ -5,9 +5,10 @@ import { Redirect } from "react-router-dom";
 // import ReactFontFace from 'react-font-face';
 // import myFirstFont from '../fonts/SFUJamaicaRegular.TTF'
 
-function FogotPass(props) {
+function ResetPass(props) {
   const [loading, setLoading] = useState(false);
-  const phoneNumber = useFormInput("");
+  const token = useFormInput("");
+  const password = useFormInput("");
   const [error, setError] = useState(null);
   const [redirect, setRedirect] = useState(false);
 
@@ -16,25 +17,23 @@ function FogotPass(props) {
     setError(null);
 
     axios
-      .post("http://dev.ogid.daihaijsc.com/users/forgot_vphone", {
-        phoneNumber: phoneNumber.value,
+      .post("http://dev.ogid.daihaijsc.com/users/reset_password_phone", {
+        token: token.value,
+        password: password.value,
       })
       .then((response) => {
-     
         if (response.data.status == 0) {
           setRedirect(true);
-        } else {
-          alert('sai số điện thoại rồi con chó!!');
-          
         }
       })
       .catch((error) => {
-        setError(error.response.data);
+        setLoading(false);
+        setError("Something went wrong. Please try again later.");
       });
   };
 
   return redirect ? (
-    <Redirect to="/resetpass" />
+    <Redirect to="/login" />
   ) : (
     <div>
       <div className="main main--ishopgo" role="main">
@@ -51,24 +50,27 @@ function FogotPass(props) {
                       name="contact-form"
                       action="/abc"
                     >
-                      <h3 className="title-page">Nhập số điện thoại</h3>
+                      <h3 className="title-page">Tạo lại mật khẩu</h3>
                       <div className="form-group">
                         <div className="form-group">
                           <input
                             className="input form-control"
-                            placeholder="Nhập số điện thoại"
+                            placeholder="Nhập mã OTP"
                             type="text"
-                            {...phoneNumber}
+                            {...token}
                           />
                         </div>
                       </div>
-                      {
-                        error &&
-                        <p className="reg">
-                            {error.message}
-                        </p>
-                       
-                      }
+                      <div className="form-group">
+                        <div className="form-group">
+                          <input
+                            className="input form-control"
+                            placeholder="Nhập mật khẩu mới"
+                            type="text"
+                            {...password}
+                          />
+                        </div>
+                      </div>
                       <button
                         type="button"
                         value={loading ? "Loading..." : "Login"}
@@ -126,4 +128,4 @@ const useFormInput = (initialValue) => {
     onChange: handleChange,
   };
 };
-export default FogotPass;
+export default ResetPass;

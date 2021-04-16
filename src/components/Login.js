@@ -1,18 +1,55 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { setUserSession } from "../Utils/Common";
-import { setJwtSession } from "../Utils/jwtService";
+// import { setJwtSession } from "../Utils/jwtService";
 import { Redirect } from "react-router-dom";
 
-import myFirstFont from '../fonts/SFUJamaicaRegular.TTF'
+function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+  console.log('statusChangeCallback');
+  console.log(response);                   // The current login status of the person.
+  if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+    testAPI();  
+  } else {                                 // Not logged into your webpage or we are unable to tell.
+    document.getElementById('status').innerHTML = 'Please log ' +
+      'into this webpage.';
+  }
+}
+function checkLoginState() {               // Called when a person is finished with the Login Button.
+  window.FB.getLoginStatus(function(response) {   // See the onlogin handler
+    statusChangeCallback(response);
+  });
+}
+window.fbAsyncInit = function() {
+  window.FB.init({
+    appId      : '780879455966763',
+    cookie     : true,                     // Enable cookies to allow the server to access the session.
+    xfbml      : true,                     // Parse social plugins on this webpage.
+    version: 'v10.0'          // Use this Graph API version for this call.
+  });
+  window.FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+    statusChangeCallback(response);        // Returns the login status.
+  });
+  
+};
+function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+  console.log('Welcome!  Fetching your information.... ');
+  window.FB.api('http://ogid.daihaijsc.com/api/users/fb_login', function(response) {
+    console.log('Successful login for: ' + response.name);
+    document.getElementById('status').innerHTML =
+      'Thanks for logging in, ' + response.name + '!';
+  });
+}
 
 function Login(props) {
   const [loading, setLoading] = useState(false);
+  
   const username = useFormInput("");
   const password = useFormInput("");
   const [error, setError] = useState(null);
   const [redirect, setRedirect] = useState(false);
+
   // handle button click of login form
+
   const handleLogin = () => {
     setError(null);
     setLoading(true);
@@ -21,21 +58,22 @@ function Login(props) {
         username: username.value,
         password: password.value,
         applicationId: "08dbd700-1f38-11eb-91ff-dab8a2794d67",
+        packageName: "webcuukiem",
+        osName: "OTHER"
       })
       .then((response) => {
         const red = response.data;
-        setLoading(false);
+
         setUserSession(response.data.id, response.data.user);
         localStorage.setItem("userId", red.data.userId);
         localStorage.setItem("sessionId", red.data.sessionId);
         setRedirect(true);
       })
       .catch((error) => {
-        setLoading(false);
-        setError("Something went wrong. Please try again later.");
+        // console.log(error.response);
+        setError(error.response.data);
       });
   };
-
   return redirect ? (
     <Redirect to="/home" />
   ) : (
@@ -62,7 +100,7 @@ function Login(props) {
                             placeholder="Tên đăng nhập"
                             type="text"
                             {...username}
-                            autoComplete="new-password"
+                            required="required"
                           />
                         </div>
                       </div>
@@ -73,13 +111,13 @@ function Login(props) {
                             placeholder="Mật khẩu"
                             type="password"
                             {...password}
-                            autoComplete="new-password"
+                            required="required"
                           />
                         </div>
                       </div>
-
+                      {error && <p className="reg">{error.message}</p>}
                       <button
-                        type="button"
+                        type="submit"
                         value={loading ? "Loading..." : "Login"}
                         onClick={handleLogin}
                         disabled={loading}
@@ -96,6 +134,10 @@ function Login(props) {
                       <a className="reg" href="/fogotpass">
                         Quên mật khẩu
                       </a>
+                    </div>
+                    <button scope="public_profile,email" onClick={checkLoginState}>login facebook
+                    </button>
+                    <div id="status">wf
                     </div>
                   </div>
                 </div>

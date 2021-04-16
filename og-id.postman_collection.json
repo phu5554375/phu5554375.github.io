@@ -1,0 +1,887 @@
+{
+	"info": {
+		"_postman_id": "26790ed8-b6ee-45b5-bdde-fe20d2bee4a1",
+		"name": "og-id",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "get user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9901/admin/users?page=0&page_size=2&username=huyoc&full_name=Do&phone_number=0833280&is_phone_verified=false&is_email_verified=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9901",
+							"path": [
+								"admin",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "page_size",
+									"value": "2"
+								},
+								{
+									"key": "username",
+									"value": "huyoc"
+								},
+								{
+									"key": "full_name",
+									"value": "Do"
+								},
+								{
+									"key": "phone_number",
+									"value": "0833280"
+								},
+								{
+									"key": "is_phone_verified",
+									"value": "false"
+								},
+								{
+									"key": "is_email_verified",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "block-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_app_id\": \"d5a39e4a-1f46-11eb-b584-dab8a2794d67\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9901/admin/block-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9901",
+							"path": [
+								"admin",
+								"block-user"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "page_size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "full_name",
+									"value": "Do",
+									"disabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "0833280",
+									"disabled": true
+								},
+								{
+									"key": "is_phone_verified",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "is_email_verified",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unblock-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_app_id\" : \"d5a39e4a-1f46-11eb-b584-dab8a2794d67\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9901/admin/unblock-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9901",
+							"path": [
+								"admin",
+								"unblock-user"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "page_size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "full_name",
+									"value": "Do",
+									"disabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "0833280",
+									"disabled": true
+								},
+								{
+									"key": "is_phone_verified",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "is_email_verified",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "block-user-by-time",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_app_id\" : \"d5a39e4a-1f46-11eb-b584-dab8a2794d67\",\r\n    \"start_at\" : \"2020-12-01T00:00:00\",\r\n    \"end_at\" : \"2020-12-11T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8888/admin/block-user-by-time",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"admin",
+								"block-user-by-time"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "page_size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "full_name",
+									"value": "Do",
+									"disabled": true
+								},
+								{
+									"key": "phone_number",
+									"value": "0833280",
+									"disabled": true
+								},
+								{
+									"key": "is_phone_verified",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "is_email_verified",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"anhtt\",\r\n    \"password\": \"123456\",\r\n    \"applicationId\": \"08dbd700-1f38-11eb-91ff-dab8a2794d67\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://dev.ogid.daihaijsc.com/users/login",
+					"protocol": "http",
+					"host": [
+						"dev",
+						"ogid",
+						"daihaijsc",
+						"com"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "8cea1b30-2274-11eb-8385-dab8a2794d67",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"fullName\": \"Do Thanh Tung\",\r\n   \"phoneNumber\": \"0833280456\",\r\n   \"email\": \"t.dovn114@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://dev.ogid.daihaijsc.com/users",
+					"protocol": "http",
+					"host": [
+						"dev",
+						"ogid",
+						"daihaijsc",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swagger",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"huyoccho\",\r\n    \"password\": \"123456\",\r\n    \"applicationId\": \"08dbd700-1f38-11eb-91ff-dab8a2794d67\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://dev.ogid.daihaijsc.com/swagger",
+					"protocol": "http",
+					"host": [
+						"dev",
+						"ogid",
+						"daihaijsc",
+						"com"
+					],
+					"path": [
+						"swagger"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"huyoccho\",\r\n    \"password\": \"123456\",\r\n    \"applicationId\": \"08dbd700-1f38-11eb-91ff-dab8a2794d67\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9900/users/a922b07c-1f46-11eb-b582-dab8a2794d67",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"users",
+						"a922b07c-1f46-11eb-b582-dab8a2794d67"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get session by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "f7b4ec1c-443c-11eb-80dc-dab8a2794d67l",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"huyoccho\",\r\n    \"password\": \"123456\",\r\n    \"applicationId\": \"08dbd700-1f38-11eb-91ff-dab8a2794d67\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://dev.ogid.daihaijsc.com/session",
+					"protocol": "http",
+					"host": [
+						"dev",
+						"ogid",
+						"daihaijsc",
+						"com"
+					],
+					"path": [
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"phule\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9900/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\": \"t.dovn114@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9900/users/forgot_vemail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"users",
+						"forgot_vemail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot password Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "89654ea8-24cc-11eb-b8a1-dab8a2794d67",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\": \"quanque@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9900/users/send_vemail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"users",
+						"send_vemail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset password email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"WnVsWMC6lK2JXia3lSveEmY1R-koso_EA8Hccn7dMGXJgd6FxJlqwLZVaCb0uzV7q1VHT4A2tlP8vSHEPhOKpw==\",\r\n    \"password\": \"tung@114\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9900/users/reset_password_email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"users",
+						"reset_password_email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "e9956ab2-1f43-11eb-ab76-dab8a2794d67",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"tungdt114\",\r\n    \"oldPassword\": \"654321\",\r\n    \"newPassword\": \"654321\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/users/change-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"users",
+						"change-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mobile charge",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "228cd1ee-400e-11eb-b40d-dab8a2794d67"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"merchantId\": 49660,\r\n    \"merchantAccount\": \"dahai.jsc.co@gmail.com\",\r\n    \"pinCard\" : \"2222222222\",\r\n    \"cardSerial\": \"2222222222\",\r\n    \"typeCard\": \"GATE\",\r\n    \"cardPrice\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9900/payment/mobile-charge",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"payment",
+						"mobile-charge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ATM charge",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "01c955f8-3b91-11eb-a9e8-dab8a2794d67"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"amount\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9900/payment/atm-charge",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"payment",
+						"atm-charge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "game server charge",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "5d7ec956-294d-11eb-a13f-dab8a2794d67"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"amount\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://gate.w01.jjjwan.net/yuenan/pay.php",
+					"protocol": "http",
+					"host": [
+						"gate",
+						"w01",
+						"jjjwan",
+						"net"
+					],
+					"path": [
+						"yuenan",
+						"pay.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update ATM charge",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "228cd1ee-400e-11eb-b40d-dab8a2794d67"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"amount\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9900/payment/atm-charge?transaction_info=&order_code=bf66eb14-2987-11eb-9bf8-dab8a2794d67&price=10000&payment_id=19802177&payment_type=2&error_text=&secure_code=df4fd2956df7155f55ad4b7c45a6c6ba&token_nl=244481-17566d67a35fc4a7d955ce6d6b8c89f4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"payment",
+						"atm-charge"
+					],
+					"query": [
+						{
+							"key": "transaction_info",
+							"value": ""
+						},
+						{
+							"key": "order_code",
+							"value": "bf66eb14-2987-11eb-9bf8-dab8a2794d67"
+						},
+						{
+							"key": "price",
+							"value": "10000"
+						},
+						{
+							"key": "payment_id",
+							"value": "19802177"
+						},
+						{
+							"key": "payment_type",
+							"value": "2"
+						},
+						{
+							"key": "error_text",
+							"value": ""
+						},
+						{
+							"key": "secure_code",
+							"value": "df4fd2956df7155f55ad4b7c45a6c6ba"
+						},
+						{
+							"key": "token_nl",
+							"value": "244481-17566d67a35fc4a7d955ce6d6b8c89f4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ngang luong mobile charge request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "ce47d2f2-1833-11eb-989c-47e95a503ce9"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"merchant_id\": 6211\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://www.nganluong.vn/service/mobileCard/charge",
+					"protocol": "http",
+					"host": [
+						"www",
+						"nganluong",
+						"vn"
+					],
+					"path": [
+						"service",
+						"mobileCard",
+						"charge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get charging -package",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "c9be823a-4335-11eb-b44b-dab8a2794d67",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://dev.ogid.daihaijsc.com/charging-package?application_id=08dbd700-1f38-11eb-91ff-dab8a2794d67&charging_method=MOBILE_CHARGE",
+					"protocol": "http",
+					"host": [
+						"dev",
+						"ogid",
+						"daihaijsc",
+						"com"
+					],
+					"path": [
+						"charging-package"
+					],
+					"query": [
+						{
+							"key": "application_id",
+							"value": "08dbd700-1f38-11eb-91ff-dab8a2794d67"
+						},
+						{
+							"key": "charging_method",
+							"value": "MOBILE_CHARGE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create charging -package",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "c9be823a-4335-11eb-b44b-dab8a2794d67",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"application_id\": \"08dbd700-1f38-11eb-91ff-dab8a2794d67\",\r\n    \"package_amount\": 1000000,\r\n    \"package_value\": 700000,\r\n    \"charging_method\":\"MOBILE_CHARGE\",\r\n    \"description\": \"4200 vàng\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9900/charging-package",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9900",
+					"path": [
+						"charging-package"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send-email-via-sendgrid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}

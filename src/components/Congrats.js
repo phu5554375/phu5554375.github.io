@@ -1,7 +1,7 @@
 
 import React from "react";
 
-function Introl() {
+function Congrats() {
   return (
     <div>
    
@@ -11,8 +11,14 @@ function Introl() {
           <div className="container">
             <div className="row">
               <div className="col-md-12 col-xs-12 ">
-                <div className="video">
-                <div class="introl"><h3>cửu kiếm chi vương</h3><p>Sau thời gian dài chờ đợi, bom tấn nhập vai cuối cùng của năm 2020 – Cửu kiếm chi vương sẽ chính thức ra mắt. Là sản phẩm mới nhất đến từ Đại Hải, Cửu kiếm chi vương đã tạo nên một trận "siêu bão" trong cộng đồng game thủ Việt Nam ngay từ khi những thông tin đầu tiên được hé lộ và đã thu về hơn 1000 lượt đăng ký tải game trước – 1 con số ấn tượng chứng minh cho độ nóng của bom tấn kiếm hiệp dị giới này.</p><p>Chưa từng xuất hiện ở bất kỳ tựa game nào, thế giới Kiếm Hiệp Dị Giới – Đa Chiều Vũ Trụ của Cửu kiếm chi vương sẽ mang đến những trải nghiệm mới mẻ, độc nhất cho cộng đồng game thủ Việt.</p><p>Mọi giới hạn đều sẽ được phá bỏ, người chơi có toàn quyền quyết định số phận cho nhân vật của mình tại Cửu kiếm chi vương. Mọi chi tiết, cảnh vật tại Cửu kiếm chi vương đều được thiết kế vô cùng tỉ mỉ, chân thực không tưởng nhờ sự hậu thuẫn của hệ thống công nghệ đồ họa 3D tân tiến, hiện đại bậc nhất.</p></div>
+                <div>
+                  <div className="congrats">
+                  <img className="logo-default" src="img/aaa.png" alt="daihai" />
+                    <h3>Chúc mừng</h3>
+                   
+                    <p style={{textAlign:'center', color:'#000'}}>Chúc mừng bạn đã thanh toán thành công lệnh nộp tiền. Chúc bạn chơi game vui vẻ!!</p>
+                    <a className="gd-new" href="/home">GIAO DỊCH MỚI</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -39,4 +45,4 @@ function Introl() {
   );
 }
 
-export default Introl;
+export default Congrats;

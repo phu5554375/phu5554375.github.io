@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
+
 import axios from "axios";
 
 function Home() {
@@ -8,19 +9,23 @@ function Home() {
   const handleShow = () => setShow(true);
   const handleClickMomo = () => {
     const headers = {
-      'Authorization': localStorage.getItem("sessionId")
-    }
+      Authorization: localStorage.getItem("sessionId"),
+    };
     axios
-      .post("http://www.nganluong.vn/service/mobileCard/charge", {"merchant_id": 6211}, {
-        headers: headers
-      })
+      .post(
+        "http://dev.ogid.daihaijsc.com/payment/atm-charge",
+        { amount: 10000 },
+        {
+          headers: headers,
+        }
+      )
       .then((response) => {
         const red = response.data;
-         window.location.href = red.data;
+        window.location.href = red.data;
       })
       .catch((error) => {});
   };
-  
+
   return (
     <div>
       {/* Main Wrapper */}
@@ -34,7 +39,7 @@ function Home() {
                   <iframe
                     width="68%"
                     height={355}
-                    src="https://www.youtube.com/embed/Yq6AVQTuxss"
+                    src="https://www.youtube.com/embed/xCvdtS0h46U"
                     frameBorder={0}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -52,7 +57,7 @@ function Home() {
             <div className="flex-icon pd-40">
               <div className="uti_body pd-5">
                 <div className="icon">
-                  <a href="/bank">
+                  <a href="https://www.facebook.com/cuukiemchivuong">
                     <img src="img/Fanpage.png" />
                   </a>
                 </div>
@@ -107,15 +112,15 @@ function Home() {
           <Modal.Title>Vui lòng chọn hình thức nạp tiền</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="col-12">
-            <a onClick={handleClickMomo} className="btn btn-pri btn-momo" />
+            <div className="col-12">
+            <a href="/bank" className="btn btn-pri btn-momo" />
           </div>
           <div className="col-12">
             <a href="/cardmobile" className="btn btn-pri btn-card" />
-          </div>
-          <div className="col-12">
-            <a href="bank.html" className="btn btn-pri btn-bank" />
-          </div>
+          </div>  
+           <div className="col-12">
+            <a href="/bank" className="btn btn-pri btn-bank" />
+          </div> 
         </Modal.Body>
       </Modal>
     </div>

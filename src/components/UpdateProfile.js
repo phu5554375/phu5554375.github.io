@@ -3,27 +3,34 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { setUserSession } from '../Utils/Common';
 function Dangky(props) {
+
     const [loading, setLoading] = useState(false);
-    const fullName = useFormInput('');
+    const [users, setUsers] = useState({
+      fullName: ''
+    });
+
+    const handleChange = e => {
+      const {name, value} = e.target;
+      setUsers({...users, [name]: value})
+    }
+   
     const phoneNumber = useFormInput('');
     const email = useFormInput('');
     const [error, setError] = useState(null);
 
     const [redirect, setRedirect] = useState(false);
-    
+
     // handle button click of login form
     const handleLogin = () => {
         setError(null);
         setLoading(true);
-        axios.post('http://dev.ogid.daihaijsc.com/users', { fullName: fullName.value, phoneNumber: phoneNumber.value, email: email.value, applicationId:'08dbd700-1f38-11eb-91ff-dab8a2794d67' }).then(response => {
+        axios.put('http://dev.ogid.daihaijsc.com/users', { ...users, applicationId:'08dbd700-1f38-11eb-91ff-dab8a2794d67' }).then(response => {
         setLoading(false);
         
         setUserSession(response.data.id, response.data.user);
-        console.log(props);
-        setRedirect(true);
-        
-        }).catch(error => {
       
+        setRedirect(true);
+        }).catch(error => {
         setLoading(false);
         setError("Something went wrong. Please try again later.");
         });
@@ -45,8 +52,11 @@ function Dangky(props) {
                         <div className="form-group">
                           <input 
                           className="input form-control" 
-                          placeholder="Tên đầy đủ" 
-                          type="text" {...fullName}  />
+                          placeholder="Tên đầy đủ"
+                          name="fullName"
+                          value={users.fullName}
+                          onChange={handleChange}
+                          type="text"  />
                         </div>
                       </div>
                       <div className="form-group">
@@ -70,7 +80,7 @@ function Dangky(props) {
                       <button type="button" 
                       value={loading ? 'Loading...' : 'Login'} 
                       onClick={handleLogin} disabled={loading} 
-                      className="btn btn-user ui-gradient-peach"> Đăng ký</button>
+                      className="btn btn-user ui-gradient-peach"> Cập nhật</button>
                     </form>
                   </div>
                 </div>
@@ -98,6 +108,7 @@ function Dangky(props) {
       </div>
   );
 }
+
 const useFormInput = initialValue => {
     const [value, setValue] = useState(initialValue);
   

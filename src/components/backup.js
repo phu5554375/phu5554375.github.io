@@ -31,12 +31,12 @@ function Dangky(props) {
     const validateInput = (checkingText) => {
       /* reg exp để kiểm tra xem chuỗi có chỉ bao gồm 10 - 11 chữ số hay không */
       const checkDau = (str) => {
-          var keywords = /^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+$/;
+          var keywords = /^[a-zA-Z0-9][a-zA-Z0-9_]*[a-zA-Z0-9](?<![_\s\-]{6,}.*)$/;
           return keywords.test(str);
       }
 
       let checkData;
-      if (checkingText.includes(" ") ) {
+      if (checkingText.includes(" ") || checkDau(checkingText)) {
         checkData= { isInputValid: false,
                  errorMessage: 'Tên đăng ký viết liền không dấu'};
       } else {
