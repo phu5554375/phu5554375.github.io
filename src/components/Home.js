@@ -13,7 +13,7 @@ function Home() {
     };
     axios
       .post(
-        "http://dev.ogid.daihaijsc.com/payment/atm-charge",
+        "https://ogid.daihaijsc.com/api/payment/atm-charge",
         { amount: 10000 },
         {
           headers: headers,

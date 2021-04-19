@@ -17,7 +17,7 @@ function ResetPass(props) {
     setError(null);
 
     axios
-      .post("http://dev.ogid.daihaijsc.com/users/reset_password_phone", {
+      .post("https://ogid.daihaijsc.com/api/users/reset_password_phone", {
         token: token.value,
         password: password.value,
       })

@@ -34,7 +34,7 @@ function Momo() {
     if(amount % 10000 == 0){
       axios
       .post(
-        "http://dev.ogid.daihaijsc.com/payment/atm-charge",
+        "https://ogid.daihaijsc.com/api/payment/atm-charge",
         { amount: amount - 0, serverId: severs },
         {
           headers: headers,
@@ -61,7 +61,7 @@ function Momo() {
   useEffect(() => {
     axios
       .get(
-        "http://dev.ogid.daihaijsc.com/charging-package?application_id=08dbd700-1f38-11eb-91ff-dab8a2794d67&charging_method=ATM_CHARGE",
+        "https://ogid.daihaijsc.com/api/charging-package?application_id=08dbd700-1f38-11eb-91ff-dab8a2794d67&charging_method=ATM_CHARGE",
         {}
       )
       .then((response) => {

@@ -13,18 +13,16 @@ function Dangky(props) {
       const {name, value} = e.target;
       setUsers({...users, [name]: value})
     }
-   
     const phoneNumber = useFormInput('');
     const email = useFormInput('');
     const [error, setError] = useState(null);
-
     const [redirect, setRedirect] = useState(false);
 
     // handle button click of login form
     const handleLogin = () => {
         setError(null);
         setLoading(true);
-        axios.put('http://dev.ogid.daihaijsc.com/users', { ...users, applicationId:'08dbd700-1f38-11eb-91ff-dab8a2794d67' }).then(response => {
+        axios.put('https://ogid.daihaijsc.com/api/users', { ...users, applicationId:'08dbd700-1f38-11eb-91ff-dab8a2794d67' }).then(response => {
         setLoading(false);
         
         setUserSession(response.data.id, response.data.user);

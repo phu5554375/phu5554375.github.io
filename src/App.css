@@ -3903,14 +3903,19 @@ tbody.collapse.show {
 .navbar-dark .navbar-text a:hover {
   color: #fff;
 }
-
+.kep-login-facebook{
+  padding: 10px !important;
+  font-size: 13px !important;
+}
+.face-log{
+  text-align: center;
+}
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
   background-clip: border-box;
   border: 0 solid rgba(0, 0, 0, 0.125);
   border-radius: 0.5rem;

@@ -55,7 +55,13 @@ function Dangky(props) {
     const handleLogin = () => {
         setError(null);
         setLoading(true);
-        axios.post('http://dev.ogid.daihaijsc.com/users/register', { username: username.value, password: password.value,   }).then(response => {
+        axios.post('https://ogid.daihaijsc.com/api/users/register', { 
+          username: username.value, 
+          password: password.value,
+          applicationId: "08dbd700-1f38-11eb-91ff-dab8a2794d67",
+          packageName: "webcuukiem",
+          osName: "OTHER"
+         }).then(response => {
         setLoading(false);
         setUserSession(response.data.id, response.data.user);
         console.log(props);

@@ -16,7 +16,7 @@ function FogotPass(props) {
     setError(null);
 
     axios
-      .post("http://dev.ogid.daihaijsc.com/users/forgot_vphone", {
+      .post("https://ogid.daihaijsc.com/api/users/forgot_vphone", {
         phoneNumber: phoneNumber.value,
       })
       .then((response) => {

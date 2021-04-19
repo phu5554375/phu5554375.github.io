@@ -56,10 +56,9 @@ function App() {
     //   setUser(userStorage);
     // }
     axios
-      .get("http://dev.ogid.daihaijsc.com/users/login")
+      .get("https://ogid.daihaijsc.com/api/users/login")
       .then((response) => {
         setUserSession(response.data.id, response.data.user);
-
         setAuthLoading(false);
       })
       .catch((error) => {
