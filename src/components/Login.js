@@ -101,9 +101,12 @@ function Login(props) {
                       </a>
                     </div>
                     <hr />
-                    <LoginFacebook/>
-                    
+                    <div className="text-center line-20">
                     <LoginGoogle/>
+                      <LoginFacebook/>
+                     
+                    </div>
+                    
                  
                   </div>
                 </div>

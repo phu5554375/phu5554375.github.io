@@ -7581,7 +7581,9 @@ a.bg-dark:hover {
 .text-center {
   text-align: center;
 }
-
+.line-20 button{
+  width: 264px;
+}
 @media (min-width: 576px) {
   .text-sm-left {
     text-align: left;

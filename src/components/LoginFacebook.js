@@ -14,7 +14,6 @@ function LoginFacebook() {
     axios
       .post("https://ogid.daihaijsc.com/api/users/fb_login", {
         "accessToken": listtoken,
-        "idToken": listtoken,
         "applicationId": "08dbd700-1f38-11eb-91ff-dab8a2794d67",
         "packageName": "webcuukiem",
         "osName": "OTHER"
@@ -28,9 +27,7 @@ function LoginFacebook() {
       })
       .catch((error) => console.log(error));
   }, [listtoken]);
-
   const responseFacebook = (response) => {
-
     setData(response);
     setPicture(response.picture.data.url);
     setListtoken(response.accessToken);
@@ -50,6 +47,7 @@ function LoginFacebook() {
             <FacebookLogin
               appId="254237539758989"
               autoLoad={false}
+              textButton="Đăng nhập bằng Facebook"
               listtoken={listtoken}
               fields="name,email,picture"
               scope="public_profile,user_friends"
